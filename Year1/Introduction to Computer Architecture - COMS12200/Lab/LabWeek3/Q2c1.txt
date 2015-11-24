@@ -1,0 +1,4 @@
+By changing the type of the argument x(uint8_t), we allow for a negative or positive number(signed t) to be
+passed to an unsigned integer. This means, if we take for example a negative number t=-25 11100111(2) (using
+two's complement), and pass it to an unsigned variable, then we end up with the MSB to be equal to 2^7 instead
+of -2^7. Therefore 11100111 as an unsigned 8-bit decimal is 231.

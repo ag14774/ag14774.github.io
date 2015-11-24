@@ -1,0 +1,4 @@
+Expression: (~(x>>7)+1)|((-x)>>7)
+The first part returns -1 whenever x<0 and returns 0 otherwise. This satisfies the first two parts of the function.
+This means we have to find an expression[(-x)>>7] which will return 1 when x is positive and 0 otherwise,
+thus when combined with the first expression, it will fully satisfy the function.

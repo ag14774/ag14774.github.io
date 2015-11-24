@@ -1,0 +1,150 @@
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;" >
+]>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Worksheet 3: Data Representation</title>
+<style>
+h1, h2 { text-align:center; }
+pre { margin-left:40px; }
+.undent { margin-left:-40px; }
+.letter { list-style-type: lower-alpha; }
+</style>
+</head>
+<body>
+
+<h1>Worksheet: Data Representation</h1>
+
+<h2>Mike Fraser<br />Week 3</h2>
+
+<p>Do not use a calculator on any of the questions below. You must be able to
+do this using mental arithmetic, or a piece of paper if you require it. At the
+end of this worksheet you will find a table with ASCII encodings.</p>
+
+<ol>
+
+<li>Assume that we have the datatypes char and int.
+
+<ol class="letter">
+
+<li>Which set does <code>0</code> belong to? Give two other example values of
+that datatype.</li>
+
+<li>Which set does <code>'0'</code> belong to? Give two other example values of
+that datatype.</li>
+
+<li>Which set does <code>'\0'</code> belong to? Give two other example values
+of that datatype.</li>
+
+</ol>
+
+<br/>
+</li>
+
+<li>Assume an 8-bit machine. Write down the binary representations for:
+
+<ol class="letter">
+<li> The int 0</li>
+<li> The int 1</li>
+<li> The int 10</li>
+<li> The int 100</li>
+<li> The int -1</li>
+<li> The int -10</li>
+<li> The int -100</li>
+<li> The unsigned 10</li>
+<li> The unsigned 100</li>
+<li> The unsigned 156</li>
+<li> The unsigned 246</li>
+<li> The unsigned 255</li>
+<li> The character 'd'</li>
+<li> The character '+'</li>
+</ol>
+
+<br/>
+</li>
+
+<li>Assume an 8-bit machine. What is the interpretation of each of the
+following bit patterns as an int, unsigned, and char?
+
+<ol class="letter">
+<li><code>01100110</code></li>
+<li><code>01000110</code></li>
+</ol>
+
+<br/>
+</li>
+
+<li>Assume an 8-bit machine programmed in C. How much is
+
+<ol class="letter">
+<li> <code>int 100 + 100 + 100 + 100</code> </li>
+<li> <code>unsigned 100 + 100 + 100 + 100</code> </li>
+<li> <code>int 100 + 100 + 100 - 400</code> </li>
+<li> <code>unsigned 100 + 100 + 100 - 400</code> </li>
+<li> <code>char '1' + 2</code> </li>
+<li> <code>char '2' + 1</code> </li>
+<li> <code>char '1' + '2'</code> </li>
+<li> <code>char 'p' + ('A' - 'a')</code> </li>
+</ol>
+
+<br/>
+</li>
+
+<li>Assume a 32-bit floating point number, containing a sign bit <var>s</var>,
+an 8-bit unsigned biased exponent <var>e</var>, and a 23-bit
+mantissa <var>m</var>, such that the value of a number <var>s|e|m</var> is
+(-1)<sup><var>s</var></sup>2<sup><var>e</var>-127</sup>(1
++ <var>m</var>/2<sup>23</sup>).  Write down the representations for
+
+<ol class="letter">
+<li>1</li>
+<li>0.5</li>
+<li>0.125</li>
+<li>-257</li>
+<li>0.1
+
+<p class="undent">And interpretations for</p>
+
+</li>
+<li><code>0 10000000 10000000000000000000000</code></li>
+<li><code>0 01111111 01010101000000000000000</code>
+
+<p class="undent">How much is (note 2<sup>-23</sup> is 0.0000001192...)</p>
+
+</li>
+<li><code>1 + 0.1</code></li>
+<li><code>1 + 0.0000001</code></li>
+<li><code>1 + 0.00000005</code></li>
+<li><code>(((1 + 0.00000005) + 0.00000005) + 0.00000005)</code></li>
+<li><code>(1 + (0.00000005 + (0.00000005 + 0.00000005)))</code></li>
+
+</ol>
+
+<br/>
+</li>
+
+<li>
+
+<ol class="letter">
+
+<li>In a computer language we make identifiers out of characters. In C, an
+identifier consists of a letter or underscore, followed by any number of
+letters, digits or underscores. How many different identifiers are there with
+up to 7 characters? (do NOT use a caclulator, but write it down in terms of
+multiplications and additions, then make a guess as to how many zeroes the
+answer has). Note: case is important.</li>
+
+<li>Write down the formula for identifiers of exactly N characters long.</li>
+
+</ol>
+
+<br/>
+</li>
+
+</ol>
+
+<p style="text-align:center;"><img src="ascii.png"/></p>
+
+</body>
+</html>

@@ -1,0 +1,783 @@
+Gliders:
+-Milestones of flight:
+
+Engineless flight - 1852 -> Cayley's glider - 1912
+Powered fixed-wing flight - 1903 -> Wright flyer - 1904
+Powered rotorcraft (autogyro) - 1923 -> Cierva's C4 Autogiro (1923)
+Powered rotorcraft (helicopter) - 1936 -> Focke-Angelis Fa61 (1937)
+Manned Supersonic flight - 14 October 1947 -> Chuck Yaeger - Bell X1
+First Sustained Supersonic Flight - North American F100 - J57 with Reheat (Afterburner)
+
+-lateral and directional controls are used to counteract the effects of adverse yaw
+
+-can get airborn with:
+Aerotow
+Catapult Launch
+Wire launch(drum winch or reverse pulley) *drum winch is the most popular
+
+-stay airborn with: (air mass must be ascending in the same rate as the rate of descent)
+Thermal lift (air gets hot, it expands rapidly and rises)
+Mountain lee wave lift (air is bounced back up when it hits the ground, going down a hill)
+Hill lift (the air is forced to rise as it hits the hill)
+--------------------------------------------------------------------------------------------------------------------------------
+System Safety:
+-Definitions:
+Hazard is any situation or condition resulting from failures, malfunctions, external events or errors,
+that has the potential to cause adverse consequences.
+
+Hazard identification process is the formal means of collecting, recording, analysing, acting on and
+generating feedback about hazards that affect the safety of the operational activities of the organisation.
+
+Risk is the assessed potential in terms of severity and likelihood of the consequences of a hazard
+considering the worst case scenario.
+
+***Failure is when an item is unable to perform its intended task or function
+
+***Integrity is the attribute of a system or an item that it can be relied upon to work correctly on demand.
+
+***Availability is the probability that an item is in a functioning state at any given point in time
+
+-Hazard and risk assesment process:
+Identify Hazard-->Assessment of severity-->Assessment of likelihood-->Acceptability of risk-->Accept Risk or Take action to reduce risk.
+
+-Severity is divided: Negligible, Minor, Major, Hazardous, Catastrophic
+
+-Likelihood is divided: Frequent, Occasional, Remote, Improbable, Extremely improbable
+
+-JAR : Joint Aviation Requirements
+
+-Systematic Failure are failures that will occur for a given set of conditions. They are repeatable and potentially predictable
+An example is software bugs or design faults. Fix by designing them out this type of fault.
+
+-Random Failure is when a failure occurs during normal operation and are not repeatable or predictable.
+Example is blowing of bulbs or failure from fatigue withing design limits. We calculate the probability of failure and
+ensure that it is within acceptable bounds.
+
+-Redundancy:
+Duplex: System has two lanes. It can detect faults by cross-comparison between the two lanes. Operation can continute after
+the pilot selects the "good" remaining lane.
+
+Dual-Duplex: Systems have two operating lanes with two more lanes monitoring them. After a single fault occurs,
+the monitoring lane can detect it and isolate the faulty lane. This happens automatically.
+
+Triple systems: Have three operating lanes. System detects automatically the fault by cross-comparison of the three lanes.
+Then it votes out the faulty lane. This is done automatically.
+
+Systematic failures can be prevented by using two different types of hardware and software. If one has a design error
+then it's unlikely that the second one will have the same faulty design. e.g Wheel brakes and thrust reversers.
+
+λ is a constants that represents failure rate per hour.
+Mean Time Between Failure is hours between failures (1/λ)
+-----------------------------------------------------------------------------------------------------------------
+Fixed-Wing Aerospace Vehicles:
+Conventional: Single fuselage, Low, aft-swept wings, underwing engines
+
+Landing gear:
+-Ground support and control. Facilitate take-off and landing.
+-Absorb kinetic energy
+-Braking
+-Fixed/Retractable
+-Configuration(Taildragger - small gear under tail, Tricycle - three gears one under nose)
+
+Engines/Powerplant:
+-Provide thrust
+-Generate electrical/hydraulic power
+-Options(number, type:human,electric,turboprop,turbofan,turbojet,rocket)
+
+Fuselage:
+-Accommodate payload
+-Contributes to longitudinal and directional stability
+-Options(Pressurised/unpressurised,size)
+It consists of the Former(rings), Bulkhead at the two ends, skin to cover everything.
+
+Empennage (Horizontal and Vertical Tail):
+-Provides aerodynamic forces to longitudinally control the aircraft(pitch-using elevator)
+-Provides aerodynamic forces to directionally control the aircraft (yaw-using rudder)
+
+Wing:
+-Provides lift!
+-Provides aerodynamic forces to laterally control the aircraft(roll - using ailerons)
+-Stores fuel
+-Options(number,size,location,shape,structural configuration)
+Structure: Spar(goes through the whole wing), Ribs, Stingers(thinner and weaker metals parallel to Spar, Skin(covers the wing), Aileron, Wing Flap, Wing tip, Fuel Tank)
+
+Flight Control System(FCS) consists of the flight control surfaces, the respective cockpit controls, connecting linkages
+and necessary operating mechanisms to control the aircraft in flight
+
+Control Surfaces:
+Primary:
+-Elevator (pitch)
+-Aileron (roll)
+-Rudder (yaw)
+Secondary:
+-Flaps
+-Slats
+-Spoilers
+
+Flaps: high-lift devices hinged on the trailing edge of the wings
+       Occupy 25-30% of the wing trailing edge inboard of the ailerons
+	   As flaps are extended, the stalling speed of the aircraft is reduced by increasing the camber and the maximum lift coefficient
+	   They can also increase drag during landing.
+
+Slats: Aerodynamic surfaces on the leading edge of the wings which allow the wing to operate at a higher angle
+       of attack --> increase maximum lift. By deploying slats an aircraft can land and take off in a shorter distance.
+	   
+Spoilers: They disrupt airflow over the wing and greatly reduce the amount of lift-->loss of altitude without gaining excessive airspeed
+	      Wing load alleviation.
+	      Sometimes used to roll an aircraft by decreasing the lift of the one wing(spoilerons) but unlike ailerons not increasing
+	      lift of the other wing.
+
+Increased use of composite materials to make aircrafts lighter. Cannot predict how composites will fail
+Steel landing gear
+Titanium engines
+----------------------------------------------------------------------------------------------------------------------------------
+Radio Systems:
+*See Acronyms.txt
+Communications:
+-HF
+-VHF
+-SATCOM
+Radar:
+-Radio Altimeter
+-Weather
+Collision Avoidance:
+-ATC Transponder
+-TCAS
+
+RF systems are used for communications between aircraft or ground, for navigation systems, data link with operational and safety information and services for passengers
+
+HF: WAVELENGTH: 100m-10m
+    FREQUENCY:  3MHz-30MHz
+	
+VHF: WAVELENGTH: 10m-1m
+     FREQUENCY:  30MHz-300MHz
+
+HF was used for long range civil data and comms links
+Susceptible to interference and fading - affected by atmospheric conditions
+Low information rates
+Long antenna required
+
+VHF is the most commonly used for radio communications link for data and voice on aircraft.
+Shorter range because of shorter wavelength but shorter antennas
+Domestic communications
+
+SATCOM - Satellite Communications
+Highest data rates and widest coverage for voice, data and passenger services
+Aerospace operators use the IMMARSAT constellation of geo-stationary satellites
+High gain antennas - fixed wing, pod mounted
+
+RADAR - RAdio Detection And Range
+Transmit RF energy and listen for a reflection(amount of energy bounced back)
+We can determine the relative position, motion and size of an object by analysing the characteristics of the received reflection.
+Used for military
+Used in civil aircraft to detect weather and as a means to measure altitude.
+
+Weather radar:
+-Lives under the "radome" - the nose of the aircraft. It is made by a non-conductive material so that
+ it is transparent to RF radar pulses.
+-It scans the forward flight path and detects water droplets, hail or snow and indicates to the pilot the best
+ path to reduce turbulance and damage to the aircraft.
+
+Radio Altimeter:
+Measures height of an aircraft when radar is pointed down(not altitude which is height relative to sea level)
+Useful at lower altitudes and commonly used as a sensor for Ground Proximity Warning Systems(GPWS)
+
+Air Traffic Controller (ATC) Transponder
+Radio device that can identify friend or foe
+It's an RX/TX system which transmits a code when receives an interrogating signal by air traffic control.
+
+Traffic Alert and Collision Avoidance System (TCAS):
+Extension of ATC transponder
+By sending interrogation signals many times a second and waiting for replies, each aircraft
+build a picture of the aircraft in vicinity.
+When the point of least separation is between 20 and 48 seconds, TA is displayed with audio warning "Traffic, Traffic"
+After TA when point of least separation is between 15 and 35 seconds, RA is displayed with audio warning "Climb, Climb". Finally "Clear of conflict"
+--------------------------------------------------------------------------------------------------------------------
+On board navigation system:
+-Visual Flying Rules(VFR):
+The pilot uses a map(VFR Chart) and a compass to plan his flight
+Only effective at low speeds and altitudes
+Requires maps covering the whole planned route
+No Autopilot
+Doesn't work at night or over featureless terraing
+
+Compass:
+Basic tool to determine heading.
+Uses a magnetic element to align with earth's magnetic field.
+Earth's magnetic field is weak.
+Is affected by nearby metallic structures and electrical currents.
+Less stable towards poles. No use at poles because poles are shifting.
+Slow response in aircraft environment
+It is only 2D
+
+Speed Measurement:
+Speed is determined from air velocity(airspeed not ground speed)
+
+Inertial Instruments:
+Accelerometer:
+Measures linear acceleration of aircraft
+Multiple devices can calculate all 3 axis
+Gravity causes ambiguity
+
+Gyroscopes:
+Rotating mass in gimballed arrangement
+Measures angular velocity and angular position, orientation relative to ground
+Removes gravity ambiguity when combined with accelerometers
+
+An Inertial Navigation System(INS) combines sensory data from gyroscopes and accelerometers
+calibrated on the ground to determine position
+Modern systems replace mechanical parts with solid-state equivalents e.g optical gyroscopes
+The main drawback of INS is drift
+
+Air data:
+Pstatic is static pressure and is measured perpendicular to the airflow
+Ptotal is the total pressure and is measured against the direction of the airflow. It's when air comes to a full stop(Total=Static+Dynamic)
+Pdynamic is the dynamic pressure and is measured by calculating the difference of Ps and Pt. As speed of air increases, Pd increases.
+
+Altitude is calculated by finding the difference between Static pressure at sea level and current static pressure.
+Airspeed is calculated by finding the difference of Total and Static Pressure(Dynamic Pressure)
+Vertical Speed is calculated by the differentiation of Static Pressure(rate of change of static pressure)
+
+The airspeed indicated by the pitot tube is called Indicated Air Speed(IAS)
+To derive True Air Speed(TAS), altitude and temperature are required
+-------------------------------------------------------------------------------------------------------------------------------
+Off-board navigation systems(require ground infrastructure):
+
+Omni-directional antennas broadcast and receive in all directions
+Directional antennas broadcast and receive with a particular beam pattern
+
+Beam riding:
+The aircraft tries to maximise signal to stay on course. However this only works for short distances because
+the width of the signal gets wider at longer distances.
+The problem of beam spreading is solved by combining two antennas and following the narrow beam between them.
+Operating frequencies are the same as many TV transmitters and are susceptible to interference.
+
+Automatic direction finder(ADF):
+Aircraft with moveable directional antenna can rotate the antenna and seek the maximum signal. The ADF
+can determine the bearing to the ground station(of known position)
+Point to point navigation
+Operating in LF bands
+Became compulsory in 1937
+
+VHF omni-directional Range (VOR):
+No moving parts version of ADF
+It sends a more complex signal: a rotating pencil beam and an omnidirectional pulse.
+The aircraft has a fixed antenna and detects the bearing between the omni-directional signal and the pencil beam
+and determines it's direction and position.
+Most widely used and important radio navigation aid.
+Signals are Morse Code or a voice signal to identify the station
+It is line of sight because it uses VHF and requires a high number of stations located along flight paths.
+
+Distance measuring equipment (DME):
+Aircraft sends an interrogation signal to the station and times the response. Time is proportional to the distance.
+
+Grid systems are used to determine location in 2D space by using info from 2 or more VOR stations.
+However because of the high frequencies, it is limited to short range. Alternative grid systems were developed using LF RF.
+
+Satellite navigation systems:
+Transmitting stations orbiting.
+Line of sight coverage over the world.
+Triangulation from a minimum of 4 satellites at known locations
+
+GPS is used alongside other navigation aids but it may never completely replace RF technologies because of concerns
+over robustness, accuracy and service-denial.
+
+On board systems such as INS have high short term accuracy but long term drift but external systems have short term errors
+but long term accuracy. By SENSOR FUSION both are combined to provide overall enhanced performance.
+
+Instrument landing system (ILS):
+Localiser provides lateral position
+Glides slope provides altitude information
+CAT1: This permits the pilot to land with a decision height of 61m and forward visibility of 800m.
+CAT2: This permits the pilot to land with a decision height of 30m and forward visibility of 350m.
+CAT3a: No decision height, visibility 200m.
+CAT3b: No decision height, visibility 50m.
+CAT3c: No decision height, no visibility.
+
+SUMMARY OF FREQUENCIES:
+SATCOM: 1.6GHz
+GPS   : 1.2GHz - 1.6GHz
+VOR   : 120MHz
+ILS   : 110MHz
+ADF   : 190kHz - 535kHz
+LORAN : 100kHz
+--------------------------------------------------------------------------------------------------------------------------------------
+Flight Deck Displays:
+
+Blind flying was demonstrated as early as 1929
+
+The BASIC SIX instruments were defines in 1937 by the RAF:
+Air speed      - Attitude  - Altitude
+Turn Indicator - Direction - Vertical Speed
+
+Attitude Indicator:
+Displays pitch and roll
+Also known as an artificial horizon
+Aircraft represented by stationary wings while the horizon rotates behind
+
+Turn Indicator:
+Uses yaw measurement to provide information on the rate and quality of turn, ie a good turn is one without side slip
+Normally used on smaller aircraft
+
+Direction Indicator:
+Normally driven by the inertial instruments and is complementary to a magnetic compass.
+Horizontal situation indicator is used in larger aircraft
+
+Standard T includes Air Speed, Attitude, Altitude and Direction and is a subset of the basic 6. Found in nearly every aircraft.
+
+In addition to primary flight, navigation and system information are needed to operate the aircraft
+Aircrafts became more complex and it became impossible for the pilot to fly the aircraft alone.
+Flight engineer was introduced but it became obsolete because of modern computer technology.
+
+Experimental CRT-based glass cockpit in 1975
+A320 CRT flight deck in 1988
+Boeing 747 LCD displays in 1995
+A380 large area LCD
+
+A380 includes an Integrated Standby flight display. It's a backup instrument providing
+independent data from differing sensors and processors (for redundancy)
+
+A380 ECAM stands for Electronic Centralised Aircraft Monitor and provides information on many of the aircraft's system.
+It can reduce pilot workload by automatically displaying important information
+----------------------------------------------------------------------------------------------------------------------------------------
+Head-up Displays, FLIR and Night Vision:
+
+Head-up displays (HUD)
+-Evolved from original aircraft gun sights
+-Information, normally symbolic but sometimes numeric on top of their view of the outside world
+-Mostly for military applications, recently for civil aircrafts
+-Display mounted to the airframe
+-Design Issues: Maximise field of view (FOV) and brightness of symbology
+
+Helmet Mounted Display (HMD):
+-Pilot looks through display that is helmet-mounted
+-Requires accurate knowledge of the relative position of the helmet to the aircraft.
+-Mostly for military applications
+
+Both require the pilot to see both images in focus at the same time.
+To achieve this the image is collimated. Image is focused at any distance
+
+Thermal Imaging:
+-Creates two dimensional representation of the temperature of a scene
+-Measures intensity of infra-red emissions from a scene and convert them to a visible light image
+-Higher temps produce an increase of radiation at all frequencies.
+
+Forward Looking InfraRed(FLIR):
+-Common application of thermal imaging
+-If displayed head down, it will include targeting information from the RADAR system
+-If displayed head down, it will usually be overlaid with primary flight information
+
+InfraRed Search and Track (IRST):
+-They are passive and it is not possible to detect if an IR system is in use.
+-Latest developments of IR imaging systems have combined FLIR systems with target identification to
+produce a system capable of detecting and tracking a target and launching weapons without being detected
+
+NightVision Systems:
+-They collect any reflected light and amplify it to a level the human eye can detect.
+-Photons at starlight level-->Convert to electrons-->Amplify electrons-->Convert to photons-->Photons at daylight level
+
+First Generation Cascade Tubes:
+-Amplification up to x50
+-Photocathode made of Gallium Arsenide
+-Drawback: Starlight levels need more than x50 amplification. More stages were linked together and this
+           caused blur because of phosphor persistence
+
+Second Generation - Micro Channel Plates:
+-Formed by the bundle of a million glass fibre tubes fused into a plate.
+-Electrons hitting the plates produce a variable number of secondary electrons
+-The gain can be as high as 50000.
+-Greater noise than the first generation but much greater gain.
+
+NVG Types:
+Type 1 - Direct View:
+Outside world only through NVG and instruments are seen by looking below NVG
+
+Type 2 - Projected View:
+Both outside world with unaided eye and NVG IR spectrum are seen.
+--------------------------------------------------------------------------------------------------------------------------------
+Propulsion 1:
+Four Stroke Piston Engines:
+-Mainly used by General Aviation and light helicopters
+-Power levels generally in the 100 - 500 HP class
+-Most Common: Lycoming O-235-L2C
+
+Two Stroke:
+-Offer more power at the expense of fuel economy & noise
+-Technological developments in this field ar addressing this issue
+
+Turbochargers:
+-An externally driven compressor driven by a turbine using exhaust gases
+-The device is designed to maintain the sea level power to altitude
+-Above the critical altitude the engine-supercharger combination is no longer capable of delivering full power
+
+Aero Diesel Engines:
+Advantages:
+-Excellent fuel economy
+-No complicated ignition system
+-Diesel is less flammable than petrol
+-Diesel easily available
+-High reliability
+
+Disadvantages:
+-Weight
+
+Gas Turbine:
+Air goes to compressor-->Combustion chamber (mixed with hydrocarbon energy)-->Turbine-->Nozzle
+The combusted air pushes the output turbine and via shaft the energy is transferred to the Compressor. (feedback process)
+
+Overall efficiency is the efficiency of the Energy Conversion and Propulsive Efficiency.
+
+Efficiency of Energy Conversion = useful mechanical energy/energy supplied by fuel
+Propulsive Efficiency = useful work / useful work+unused KE in jet.
+
+***Specific Fuel Consumption(SFC) = Fuel flow per unit of Thrust***
+
+SPECIFIC THRUST = Thrust per unit Mass Flow
+
+Intake Flow is the flow of air going to the gas turbine
+Core Flow is the air going inside the engine core(compressor and combustion chamber)
+By-Pass flow is the air going inside the engine but outside the engine core (combustion chamber and compressor)
+
+Civil Turbofans:
+High by-pass ratio
+Fuel efficiency and emissions are important-->move a large mass of air to a low jet velocity (reduces jet noise)
+                                              at the expense of size and weight
+
+Military Turbofans:
+Low by-pass ratio Reheated Turbofan
+Size and weight are important --> move small mass flow of air to high velocity
+
+Both need as high efficiency of energy conversion as possible -->temperature that the air is raised to should be as high as possible
+
+SFC is improved by:
+-Higher Propulsive Efficiency (CONWAY - 1960)
+  -Reduced jet velocity
+  -Larger fan moving more air at lower speed
+  -Increasing bypass ratio
+
+-Higher Thermal Efficiency (BR 715 - 1996)
+  -Overall pressure ratio (OPR)
+  -Turbine temperatures (TET)
+  -Component efficiencies
+
+1960 MOST OF THE NOISE FROM THE JET
+
+2000 NOISE IS BALANCED
+
+Major Pollutants:
+-Oxides of Nitrogen depends on Flame Temperature
+-Carbon Monoxide (Negligible problem except at idle conditions)
+-Unburnt Hydrocarbons (Negligible problem except at idle conditions)
+-Smoke (carbon particles)
+-Sulphur Dioxide
+
+Turbine cooling:
+High temperature gives high thermodynamic efficiency
+Blades must be cooled
+-Single Pass Internal Cooling
+-Singled Pass Multi-Feed internal cooling with film cooling
+-Quintuple pass, multi-feed internal cooling with extensive film cooling
+
+Fans - Titanium
+Compressor - Steel
+Combustor and Turbines - Nickel based alloys
+--------------------------------------------------------------------------------------------------------------------------------
+Propulsion 2:
+
+Sir Frank Whittle - First gas turbine - 1920s
+Combined two ideas: Rocket Propulsion and Supercharging
+
+1939 - Whittle Unit on test
+
+*****First flight in the UK : Gloster E28/39 powered by the W1 - 15 May 1941***** Whittle Unit
+
+Sir Stanley Hooker
+-Hooker's first job at Rolls Royce was the development of turbo-chargers for the Merlin
+
+****First Rolls-Royce jet engine: Welland ****
+
+Frank Halford simplified Whittle's design to produce deH(deHavilland) Goblin engine. The first flight was of a prototype Gloster Meteor flew on 5 March 1943
+
+***First Manned Supersonic Flight: Chuck Yaeger - Bell X1 - 14 October 1947
+Miles M52 rocket aircraft - Cancelled in 1946 - Models flew at M=1.38
+
+First Sustained Supersonic Flight - North American F100 Super Sabre with J57 with Reheat (AfterBurner)
+
+Rolls Royce Avon:
+-Canberra
+-Hunter
+-Valiant
+-English Electric Lighting (2 RR Avon Turbojets with reheat)
+
+Bristol Olympus:
+-TSR2
+-Avro Vulcan
+
+Short Haul:
+Vickers Viscount - RR Dart
+
+Long Haul:
+Bristol Brittania - Proteus
+
+***The first Jet Transport Aircraft***
+Comet Mk1 - deHavilland Ghost 50
+
+***The first jet Transantlantic Airliners***
+Boeing 707 - P&W JT3
+De Havilland Comet 4 - RR Avon
+
+***The development of by-pass engines***
+First Flight VC10 - Rolls Royce Conway (Low by-pass ratio)
+
+***The development of high by-pass ratio turbofan***
+Lockheed C5A - GE TF39
+
+***The first wide-body jets***
+Douglas DC10 - 1971
+Lockheed 1011 - 1972
+
+Harrier used Pegasus engine
+Concorde used Olympus 593
+-------------------------------------------------------------------------------------------------------------------
+Introduction to Rotary-Wing Aerospace Vehicles:
+
+First manned rotary winged aircraft (no powered rotor):
+Cierva C4 Autogiro - 17 January 1923 - Juan de la Cierva
+Cierva C1 Autogiro - 1920
+Cierva C2 Autogiro - 1922
+Cierva C3 Autogiro - 1921
+
+**Main difference of the autogyro and the helicopter is that the helicopter can hover**
+
+Cierva's death in 9th December 1936 marked the end of any further development of the autogyro.
+
+Dr Igor Bensen developed the basic design into a form that has been adopted by nearly all sport autogyro designers to date.
+
+The Achilles Heel of autogyro: The Off-Loaded Rotor and Thrust Dependent Control - The Two-Bladed Teetering Rotor
+Control of the aircraft totally depends on thrust meaning that we change the Thrust vector to control the aircraft
+
+The solution is to create a flap hinge meaning that the two flaps can move separately and not as a long flap.
+
+BUT once you start making the autogyro more complex, you run the risk of reinventing the helicopter.
+
+--------------------------------------------------------------------------------------------------------------------
+Aircraft Power Systems - Electrical:
+
+Watt is rate of work/joules per second
+
+Early aircraft used electrical power for ignition. This demand could be satisfied by a small battery or generator.
+
+As aircraft developed, more systems were added such as lighting, instrumentation and communication equipment.
+The electrical power system became similar to what we would find on a car: a 12V(or 24V) system with a lead-acid battery
+recharged by an engine-driven generator.
+
+Modern aircraft have a higher demand of electrical power. They feature multiple generators and system voltages
+and are designed to provide redundancy in case of a component failure.
+**A typical system includes a 3 phase 115 VAC 400Hz system for high power loads and a backup system based on a 28VDC.**
+
+Three phase systems feature phase voltages displaced by 120 degrees.
+
+Converting from AC to DC:
+Called Rectification
+Can be carried out by mechanically or electrically (with passive or active components)
+
+Converting from DC to AC:
+-Called Inversion
+-More complicated than rectification
+-Complex to achieve with mechanical components
+-Associated with modern power electronic techniques.
+
+Three categories: Sources, Distribution, Users
+
+Light Aircraft: 
+A few kVA into a low voltage system.
+
+Large Aircraft:
+Driven by auxiliary gearboxes on engine. Several generators, each 100KVA+, complex multi voltage system.
+
+A generator driven by the engine will have variable output frequency because of the aircraft engine running at variable speeds.
+This is not a problem where output is rectified immediately
+With an AC distribution system:
+-Allow frequency to vary - "frequency wild"
+-Drive generator from constant speed gearbox
+
+Storage:
+Batteries:
+-DC Components
+Primary Cells - The chemical reaction is not reversible and once the cell is fully discharged it is discarded
+Secondary Cells - Reversing the current reverses the electro-chemical reaction. They can be recharged.
+
+Aerospace Secondary Cells:
+Lead Acid:
+-Most mature cell technology.
+-They have good charge/discharge characteristics.
+-They vent produce corrosive elements during normal operation (gassing)
+-Techniques used to minimise gassing and the risk of leakage.
+-Wide range of temperatures.
+-Simple to recharge
+-Easy to recycle
+
+Ni-Cad battery:
+-Their chemistry allows them to be fully sealed reducing the risk of leakage
+-Greater capacity than Lead-Acid
+-Operate poorly under low temperatures
+-More complex recharging
+-Hard to recycle.
+
+APU battery location: Empenage
+Main battery: Cockpit
+They are both 24V
+
+Auxiliary Power Unit (APU)
+-A small gas turbine engine
+-Provides backup for hydraulic, pneumatic and electrical power systems.
+-Enables the aircraft to self-start
+-Fitted with electrical generator similar to the main engines
+
+Ram Air Turbine (RAT):
+The ram air turbine is an air driven generator that is dropped into the air after everything else has failed
+It will provide electrical and hydraulic power in case of failure of both engine driven generators and the APUs.
+
+Ground Power Unit(GPU):
+Strictly not part of the aircraft. External power for ground functions.
+
+A battery will more likely have a voltage level more than the nominal figure
+The specs of the aircraft DC bus allows for variations in the voltage
+
+The reason companies switch to a more electric aircraft is reduce cost of operating aircraft.
+The reason for the massive jump in power in 787 is the elimination of the airbleed system. This extra
+power is used to run the environmental control system.
+
+A380 has an electro-hydraulic FCS Actuator
+Conventional airliners have a hydraulic distribution system, transferring hydraulic power from the engines
+to the flight surface actuator.
+The A380 broke the tradition and distributed power electrically to the flight surface and then used local system
+to drive the surface.
+-------------------------------------------------------------------------------------------------------------
+Hydraulic and Pneumatic Systems:
+-Oil in the space between the outside teeth is pumped from suction to discharge
+-Gear pumps can be noisy so constant mesh patterns like herringbone may be used
+
+Creating pressure: Hydraulic pumps
+-Use a rotating swash plate to push pistons in and out.
+-Can direct fluid from inlet to outlet side.
+
+Hydraulic pumps have higher power density than electric machines
+In most aircraft the pumps maintain a system pressure of around 3000 psi independent of flow rate.
+
+One advantage of hydraulic systems is that we can easily produce the linear motion required for flight surface actuation
+with hydraulic cylinders.
+
+Hydraulic fluid is stored in a reservoir that feeds the pressure pump
+Pressurised fluid directed around the system using a series of valves
+The fluid exiting the cylinder, flows around and returns back to the reservoir
+
+Because of instant response, makes hydraulic systems good for moving flight control surfaces
+Hydraulic pumps are powered by the engine via mechanical or electrical system. They also have backup from APU and RAT.
+Multiple hydraulic circuits provide redundancy.
+
+They are expensive because they are complex and require a high level of cleanliness.
+The fluid used on aircraft is highly corrosive to many materials.
+
+Redundancy is achieved by using dual-tandem actuators
+
+Pneumatic System:
+Engine Start:
+-Many large turbines are started by an air-powered starter motor on the assessor gearbox which mechanically drives one of the engine shafts
+-Blast of air directly to the turbines
+-Power from an engine already running or the APU.
+
+Bleed Air:
+-Hot air under pressure taken from one or more compressor stages.
+-Used for wing de-icing - hot air ducted onto the leading edge
+-For powering the air conditioning system.
+
+Air Cycle Machine (ACM) conditions the air, cools it down and removes moisture to provide the temperature of air to the cabin
+
+Cabin air is a mix of fresh external air and re-circulated cabin air that has been passed for HEPA filters.
+The total volume of cabin air is replaced 25 times per hour
+Cabin pressure is controlled to reduce rates of change of pressure.
+
+-----------------------------------------------------------------------------------------------------------------
+Computing And Buses:
+
+Generic airborne computer:
+-Task oriented computer (designed to do a few functions)
+-Embedded system ( part of a wider system)
+-Real time (able to perform task within a defined timescale)
+
+Data bus: Connects component together.
+
+-1553 - Military
+-ARINC 429 - Civil
+
+Bus Controller:
+-Commands the various remote terminals to send or receive messages
+-Services requests from the remote terminals.
+-Operates according to commands stored in local memory.
+
+Remote terminal:
+-Interface between data bus and external subsystem or another data-bus.
+
+Bus Monitor:
+-Monitors and records traffic over the bus for off-line analysis.
+
+1553:
+-Serial digital bus - data sent one bit at a time
+-Each 1553 channel consists of a twisted wire pair.
+-A digital 1 is represented by a voltage of approximately 20V
+
+Consists of 3 types of word:
+-Data Word
+-Command Word
+-Status Word
+
+ARINC 664 AFDX
+AVIONICS FULL DUPLEX SWITCHED ETHERNET
+-Based on IEEE 802.3 Ethernet standard
+-Similar hardware with more software constraints in software to make the system more deterministic.
+
+*AFDX arranged users in start topologies with a switch at the hub*
+---------------------------------------------------------------------------------------------------------------
+Fuel:
+Usage:
+-Power the engines
+-Control of the aircraft centre of gravity and mass distribution
+-Heat sinking for other systems
+
+Comprises of tanks,plumbing,pumps and control to facilitate these multiple uses.
+
+-Jet fuel is kerosene-based (Jet A-1 is the standard fuel**)
+-It has a higher flash point and it less flammable than piston engine fuels.
+-Fuel used for international aviation generally attracts no tax
+
+A380 has 200 tonnes of fuel
+
+Fuel Storage:
+-All joint and access panels must be sealed
+-A natural tendency for the fuel to flow towards the pump is essential.
+-Intermediate ribs have to allow the fuel to flow and act as fuel baffles (*to prevent sloshing during manoeuvring)
+
+90% of the wing volume is usable.
+Loss is made up of: Structural displacement, Expansion space, Trapped Air, Unusable fuel, Equipment displacement, Sealant.
+Fuel can also be stored under the cabin floor, Aft fuselage or tail cone, cabin tanks ahead of the fuselage pressure bulkhead, wet empennage.
+
+Ways to measure fuel:
+-Capacitance systems
+-Ultra sonic systems
+
+Referred by precision : Class 1(5%), Class 2(2%), Class 3(1%)
+
+Fuel delivery by Motive flow: Small quantity of high pressure fuel provided by a mechanical pump at the engine to
+power a jet pump at the wing tank.
+
+Two ways to refuel:
+-Using gravity and an opening on top of the wing at around 75% wing tank span. It is impossible to over-fuel the aircraft
+and it leaves a large enough "air bubble" for the fuel system to work.
+-Modern aircraft also have single point pressurized refuelling capability at a wing root or under wing.
+
+Fuel issues:
+-Water in fuel can freeze and cause a blockage and therefore water content is monitored.
+-Tanks must be vented to allow air in and out during use and refuelling.
+-This creates a space above the liquid fuel filled with air or fuel vapour.
+-Inerting is when this space is filled with a gas like nitrogen rather than air.

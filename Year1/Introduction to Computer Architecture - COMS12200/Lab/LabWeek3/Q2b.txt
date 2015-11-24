@@ -1,0 +1,14 @@
+It shifts each bit, starting from the left Most significant bit,
+until it arrives to the right-most position.
+Then using the "&1 cuts all the other bits and prints it.
+Doing this for each bit, it prints the binary represantation of the number
+e.g: x=65 01000001
+	It begins by shifting the MSB 7 times until it becomes the least significant bit (|0|1000001 --> 0000000|0|)
+	Then it calculates 00000000 & 00000001 = 00000000(2) = 0(10)
+
+	After that, it moves the bits again 6 times until the second but(starting from the left)
+	becomes the least significant bit (0|1|000001 --> 0000000|1|).
+	Then it calculates 00000001 & 00000001 = 00000001(2) = 1(10).
+	&1 Trims the extra bits if there are any.
+
+	It loops and trims each bit until it prints the binary represantation of the number.

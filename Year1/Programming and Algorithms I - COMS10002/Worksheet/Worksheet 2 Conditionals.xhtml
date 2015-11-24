@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Worksheet 2: Conditionals</title>
+<style>
+h1, h2 { text-align:center; }
+pre { margin-left:40px; }
+</style>
+</head>
+<body>
+
+<h1>Worksheet: Conditionals</h1>
+
+<h2>Mike Fraser<br />Week 2</h2>
+
+<ol>
+
+<li>Below are three variable declarations, followed by 5 code fragments,
+each ending with a conditional. State for each fragment whether it will
+print <code>True</code> or not.  Then try it and see.
+
+<pre>int a = 5 ;
+int b = 7 ;
+int c = 11
+
+if( (a &lt;= 5) &amp;&amp; (b &gt; 7) ) {
+  printf("Fragment 1 True\n" ) ;
+}
+
+if( ((a &lt; 5) &amp;&amp; (b &gt; 7)) || (a &lt; b) || (b &gt; 1000) ) {
+  printf("Fragment 2 True\n" ) ;
+}
+
+if( !(!(a &lt;= 5) &amp;&amp; !(b &gt; 7)) ) {
+  printf("Fragment 3 True\n" ) ;
+}
+
+if( ((a &lt;= 5) &amp;&amp; (b &gt; 7)) != 0 || ( c &gt;= a*b ) ) {
+  printf("Fragment 4 True\n" ) ;
+}
+
+if( (c = 1) || (b &gt; 9) || (a &lt; -3) ) {
+  printf("Fragment 5 True\n" ) ;
+}
+</pre>
+</li>
+
+<li>Simplify the three expressions in <code>func</code>:
+
+<pre>int func( int a, int b, int c ) {
+  int x0 = (a &lt;= 5) &amp;&amp; (b &gt; 7) || (a &lt; 7) ;
+  int x1 = !(!(a &lt;= 5) &amp;&amp; !(b &gt; 7)) ;
+  int x2 = ((a &lt;= 5) || (a &gt;= 7)) == 0 ;
+  ...
+}
+</pre>
+
+</li>
+
+<li>For each of I-V below, write down the condition in C that yields true if
+the point <i>(x,y)</i> is in the shaded area. Assume there are two variables
+<code>x</code> and <code>y</code>, both of type
+<code>double</code>. You can assume that the line is <em>included</em>. For
+example, the solution to VI is <code>x >= 1</code>.
+
+<p style="text-align:center;"><img src="geo.png"/></p>
+
+</li>
+
+<li>What do each of the following functions print, if called from a main
+program with the parameter 5? Note: not all functions will terminate. Indicate
+for each function whether it will terminate or not.
+
+<pre>a(int y) {
+  while( y >=0 ) {
+    printf( "%d", y ) ;
+    y = y - 1 ;
+  }
+}
+
+b(int y) {
+  if( y >=0 ) {
+    b( y - 1 ) ;
+    printf( "%d", y ) ;
+  }
+}
+
+c(int y) {
+  printf( "%d", y ) ;
+  c( y - 1 ) ;
+}
+
+d(int y) {
+  while( y > 0 ) {
+    printf( "%d", y ) ;
+    d( y - 1 ) ;
+  }
+  printf( "%d", y ) ;
+}
+
+e(int y) {
+  while( y > 0 ) {
+    printf( "%d", y ) ;
+    y = y - 1 ;
+  }
+  e( y - 1 ) ;
+  printf( "%d", y ) ;
+}
+
+f(int y) {
+  if( y >=0 ) {
+    printf( "%d", y ) ;
+  }
+  f( y - 1 ) ;
+}
+</pre>
+
+</li>
+
+</ol>
+
+</body>
+</html>

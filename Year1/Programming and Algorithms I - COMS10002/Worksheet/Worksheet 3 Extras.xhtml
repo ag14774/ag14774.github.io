@@ -1,0 +1,104 @@
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;" >
+]>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Extras</title>
+<style>
+h1 { text-align:center; }
+pre, p.indent { margin-left:40px; }
+</style>
+<script>
+function hint1() { alert("After calling fgets, you need to find out whether "+
+"it has read in the whole line or not."); }
+function hint2() { alert("You can do that by finding the length of the "+
+"string read in, and then looking for the newline at the end - if it is "+
+"not there, fgets hasn't read in the whole line."); }
+function hint3() { alert("If fgets has not finished, just repeat the fgets "+
+"and printf calls - use a loop."); }
+</script>
+</head>
+<body>
+
+<h1>Extras</h1>
+
+<h3>Ian Holyer, 16th October</h3>
+
+<p>If you find the worksheet easy, or finish it quickly, you might like to try
+these:</p>
+
+<ol>
+
+<li><p>Write a program which uses a function to print out an int in binary.
+There is a problem because the least significant bit has to be calculated
+first, but printed out last.  Solve this by using an array to store the bits as
+you calculate them, and then print the answer out using the array.</p></li>
+
+<li><p>Write another function to print out an int in binary.  This time,
+instead of using an array, use recursion to solve the ordering problem.  (The
+function calls itself to print out all the bits except the last, then prints
+the last bit.)</p></li>
+
+<li><p>Get your program to print out the binary representation of a number of
+type <code>float</code>.  Use either a union type or a cast to re-interpret
+the <code>float</code> as an <code>int</code>.  You may need to allow for byte
+ordering issues on your computer.  Make sure the answers you get agree with the
+examples on the main worksheet.</p></li>
+
+<li><p>Write a function to convert a character from lower case to upper case
+(or leave it unchanged if it is not a lower case character) in the same way as
+the standard <code>toupper</code> function.  Your code should not mention any
+ASCII character codes.</p></li>
+
+<li><p>Here is a program which reads a line of text from the user and echos it
+back.  Put it in <code>echo.c</code> and try it out.</p>
+
+<pre>#include &lt;stdio.h&gt;
+int main() {
+  int max = 10;
+  char line[max];
+  fgets(line, max, stdin);
+  printf("%s", line);
+}
+</pre>
+
+<p>Note: the array is deliberately very small, in order to check overflow
+issues. Note: the code uses <code>fgets</code> not <code>gets</code>
+because <code>gets</code> has bug and security dangers (and the only reason it
+still exists is to support old, bad code).  Note: <code>fgets</code> is
+different from <code>gets</code> in three ways: you have to specify what stream
+it reads from, there is an explicit size limit, and the newline is included in
+the text it reads in.  Note: <code>printf</code> calls should normally include
+newlines, especially when used for debugging, otherwise the text is buffered up
+and doesn't appear on screen at the point in the program that you expect it to,
+but in this case the newline is expected to be included in the string being
+printed. Note: the program uses the name <code>max</code> for the constant 10,
+so that 10 is mentioned only once and can be changed in one place.</p>
+
+<p>Try the program three times, typing in the lines:</p>
+
+<pre>12345678
+123456789
+1234567890
+</pre>
+
+<p>Check that you understand what is happening in all three cases.</p>
+
+<p>Fix up the program so that it copes with arbitrarily long
+lines, <i>without</i> increasing the size of the array or using any other
+storage space.  <a href="" onclick="hint1()">Hint 1</a> &nbsp; <a href=""
+onclick="hint2()">Hint 2</a>  &nbsp; <a href=""
+onclick="hint3()">Hint 3</a></p>
+
+</li>
+
+<p>Although the program now works, the line typed in is never available as a
+whole to work on.  If you know how to use the <code>malloc</code> family of
+functions, which a general function to read in a line of any length from the
+user and return it as a string.</p>
+
+</ol>
+
+</body>
+</html>

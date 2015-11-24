@@ -1,0 +1,90 @@
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;" >
+]>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Worksheet 4: Arrays, Sets: Answers</title>
+<style>
+h1, h2 { text-align:center; }
+pre { margin-left:40px; }
+.undent { margin-left:-40px; }
+.letter { list-style-type: lower-alpha; }
+.img { text-align:center; }
+img { vertical-align:text-top; }
+</style>
+</head>
+<body>
+
+<h1>Worksheet: Arrays, Sets: Answers</h1>
+
+<h2>Mike Fraser<br />Week 4</h2>
+
+<ol>
+
+<li>
+
+<ol class="letter">
+
+<li>The array of <code>int</code>s occupies 24 x 4 = 96 bytes.</li>
+
+<li>The number of possible values of the array is 2<sup>24x4x8</sup> =
+2<sup>768</sup>.</li>
+
+<li>The number of sets is 2<sup>24</sup></li>
+
+<li>The number of bytes needed is 24/8 = 3.</li>
+
+</ol>
+
+</li>
+
+<li>
+
+<ol class="letter">
+
+<li>The maximum domain size is 32.</li>
+
+<li>To add an element: <code>y = y | (1 &lt;&lt; i);</code><br />
+
+To test for an element: <code>if (y &amp; (1 &lt;&lt; j)) ...</code></li>
+
+</ol>
+
+</li>
+
+<li><p>Note, we use the &#8869; symbol to denote an uninitialised memory cell,
+we have only written the value of a variable in its first memory cell, in
+effect assuming a little endian machine. In the table below, showing the
+initial configuration we have used a notation (f) to denote where variable (f)
+is stored</p>
+
+<p class="img"><img src="grid0.png"/></p>
+
+<ol class="letter">
+<li><p class="img"><img src="grid1.png"/></p></li>
+<li><code>y</code> swaps the contents of <code>e</code> and <code>f</code> via
+the pointers <p class="img"><img src="grid2.png"/></p></li>
+<li><code>y</code> does not swap if the same pointer is passed twice...
+<p class="img"><img src="grid3.png"/></p></li>
+<li><p class="img"><img src="grid4.png"/></p></li>
+</ol>
+
+</li>
+
+<li>
+
+<p class="img"><img src="grid5.png"/></p>
+
+<ol class="letter">
+<li><p class="img"><img src="grid6.png"/></p></li>
+<li><p class="img"><img src="grid7.png"/></p></li>
+<li><p class="img"><img src="grid8.png"/></p></li>
+</ol>
+
+</li>
+
+</ol>
+
+</body>
+</html>

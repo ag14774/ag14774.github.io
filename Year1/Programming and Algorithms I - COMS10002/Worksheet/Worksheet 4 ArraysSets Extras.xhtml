@@ -1,0 +1,211 @@
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;" >
+]>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Extras</title>
+<style>
+h1 { text-align:center; }
+pre, p.indent { margin-left:40px; }
+.letter { list-style-type: lower-alpha; }
+.answer { display:none; }
+</style>
+<script>
+function view(id) {
+  var answer = document.getElementById(id);
+  if (answer.style.display == '') answer.style.display = 'block';
+  else if (answer.style.display == 'none') answer.style.display = 'block';
+  else answer.style.display = 'none';
+  return false;
+}
+</script>
+</head>
+<body>
+
+<h1>Extras</h1>
+
+<h3>Ian Holyer, 23th October</h3>
+
+<p>If you find the worksheet easy, or finish it quickly, you might like to try
+these questions.  They are about variable length arrays, and how they might be
+used to write a general matrix library.  It is recommended that you compile all
+programs with <code>-std=c99</code>.</p>
+
+<ol>
+
+<li><p>Array facilities in C were originally based on constant array sizes, so
+that the compiler could know the size of an array without storing the size
+information anywhere.  The C99 standard introduced a facility for variable
+length arrays.  Try the following:</p>
+
+<pre>int h=3, w=5;
+int matrix[h][w];
+</pre>
+
+<ol class="letter">
+
+<li><p>Does this work if <code>matrix</code> is defined as a global, or if it
+is defined inside a function, or both? <a href="" onclick="return
+view('q1a')">Answer</a></p>
+
+<p id="q1a" class="answer"><b>Answer:</b> It only works inside a
+function, not globally.</p></li>
+
+<li><p>Does it work if <code>h</code> and <code>w</code> are read in so that
+the their values <i>cannot</i> be known at compile time? <a href=""
+onclick="return view('q1b')">Answer</a></p>
+
+<p id="q1b" class="answer"><b>Answer:</b> Yes, it works even if the sizes are
+read in.</p></li>
+
+<li><p>How do you think the compiler keeps track of the width and height of the
+array? <a href="" onclick="return view('q1c')">Answer</a></p>
+
+<p id="q1c" class="answer"><b>Answer:</b> The compiler stores sizes in hidden
+local variables in the function, in case the h and w variables change.</p></li>
+
+<li><p>Do you think this is a suitable way to handle all variable-sized
+arrays? <a href="" onclick="return view('q1d')">Answer</a></p>
+
+<p id="q1d" class="answer"><b>Answer:</b> A big array, or lots of arrays,
+shouldn't be allocated like this, because the allocation may be on the
+function-call stack, which is often limited to catch runaway programs.  Also
+this approach is not sufficiently flexible if the number of arrays needed in a
+program is unknown.</p></li>
+
+<li><p>Does this feature work if you don't specify a standard, or if you
+specify <code>-std=c89</code>?  Does <code>-pedantic</code> make a difference?
+Why? <a href="" onclick="return view('q1e')">Answer</a></p>
+
+<p id="q1e" class="answer"><b>Answer:</b> Yes, the feature works whether you
+specify no standard or <code>-std=c89</code>.  With no standard specified,
+the <code>gcc</code> compiler supports (roughly) the C89 standard plus some
+early extensions of its own, and variable length arrays were an early
+extension, later adopted by C99.  The feature also works if you
+specify <code>-std=c89 -pedantic</code>.  The purpose of
+the <code>-pedantic</code> flag is to switch on all warnings required by the
+relevant standard.  In the C89 standard, almost all extensions are explicitly
+allowed, and hardly any warnings are required, so <code>-pedantic</code> is
+nearly useless.  The C99 standard is stricter, and so <code>-pedantic</code> is
+more useful in trying to ensure that programs stay within the standard.
+However, its usefulness is still very limited, and it remains very difficult to
+ensure that a program is properly compiler-independent.</p></li>
+
+</ol></li>
+
+<li><p>Try writing a function like this which fills a matrix with zeros:</p>
+
+<pre>void fill(int h, int w, int matrix[h][w]) {
+  ...
+}
+</pre>
+
+<ol class="letter">
+
+<li><p>Is there any restriction on the ordering of the arguments? <a href=""
+onclick="return view('q2a')">Answer</a></p>
+
+<p id="q2a" class="answer"><b>Answer:</b> The size arguments must come before
+the matrix argument.</p></li>
+
+<li><p>Given that C uses call-by-value, you might expect the argument
+variable <code>matrix</code> to hold a copy of the array passed in as an
+argument, in which case the function would have no effect.  So can the function
+actually affect the array that is passed and, if so, why? <a href=""
+onclick="return view('q2b')">Answer</a></p>
+
+<p id="q2b" class="answer"><b>Answer:</b> All basic C language features produce
+code consisting of a couple of instructions at most.  Therefore passing an
+array to a function, which would happen by copying, is not allowed.  However,
+if you use code that looks as if it is passing an array to a function, the
+array variable is automatically replaced by a pointer to the array (or to put
+it another way, arrays are passed by pointer even though everything else is
+passed by value).  So the function <i>can</i> affect the original array passed
+in.</p></li>
+
+<li><p>Can you use a typedef to create an abbreviated name for the type of a
+(variable-sized) matrix? <a href="" onclick="return view('q2c')">Answer</a></p>
+
+<p id="q2c" class="answer"><b>Answer:</b> No.  Technically, you can write a
+local typedef inside the function, but that's nearly useless because you can't
+use it in the argument list.</p></li>
+
+</ol></li>
+
+<li><p>Try this code, for allocating space for a matrix dynamically:</p>
+
+<pre>int (*matrix)[w] = malloc(sizeof(int[h][w]));
+</pre>
+
+<ol class="letter">
+
+<li><p>What header do you need to make this work without warnings? <a href=""
+onclick="return view('q3a')">Answer</a></p>
+
+<p id="q3a" class="answer"><b>Answer:</b> You need <code>#define
+&lt;stdlib.h&gt;</code> There may be other headers which include the
+declaration of <code>malloc</code>, but this is the official one.</p></li>
+
+<li><p>Is it possible to do better than this, declaring the matrix as <code>int
+matrix[h][w]</code> as before? <a href="" onclick="return
+view('q3b')">Answer</a></p>
+
+<p id="q3b" class="answer"><b>Answer:</b> No.</p></li>
+
+<li><p>Can this matrix be indexed in the same way as one declared
+with <code>int matrix[h][w]</code>? <a href="" onclick="return
+view('q3c')">Answer</a></p>
+
+<p id="q3c" class="answer"><b>Answer:</b> Yes.</p></li>
+
+<li><p>Can this matrix be passed to the <code>fill</code> function? <a href=""
+onclick="return view('q3d')">Answer</a></p>
+
+<p id="q3d" class="answer"><b>Answer:</b> Yes.</p></li>
+
+</ol></li>
+
+<li><p>Now let's think about the overall design of a matrix library.</p>
+
+<ol class="letter">
+
+<li><p>Can you write a function which allocates space for an array as in
+question 3 and then passes it back to the caller using the <code>int
+a[h][w]</code> style of notation? <a href=""
+onclick="return view('q4a')">Answer</a></p>
+
+<p id="q4a" class="answer"><b>Answer:</b> No. The standard says that a function
+cannot return an array.</p></li>
+
+<li><p>Can you write a function which allocates space for an array as in
+question 3 and then passes it back to the caller using the <code>int
+(*a)[w]</code> style of notation? <a href="" onclick="return
+view('q4b')">Answer</a></p>
+
+<p id="q4b" class="answer"><b>Answer:</b> No, not quite.  You can define a
+function <code>int (*new(...))[3] {...}</code> for example, but the width has
+to be a constant. There is no way to have a variable as the second
+dimension.</p></li>
+
+<li><p>Is there a way round these problems that involves casting? <a href=""
+onclick="return view('q4c')">Answer</a></p>
+
+<p id="q4c" class="answer"><b>Answer:</b> You can write an allocation function
+as <code>int *new(...) {...}</code>  and cast the result using <code>int
+(*matrix)[w] = (int (*)[w]) new(w, h);</code>.</p></li>
+
+<li><p>Is there a way round these problems that involves re-design? <a href=""
+onclick="return view('q4d')">Answer</a></p>
+
+<p id="q4d" class="answer"><b>Answer:</b> You can write your functions so that
+the caller supplies the space for the answer.  For example, a function for
+adding two matrices might be defined as <code>void add(int w, int h, int
+m1[w][h], int m2[w][h], int sum[w][h]) { ... }</code>.</p></li>
+
+</ol></li>
+
+</ol>
+
+</body>
+</html>

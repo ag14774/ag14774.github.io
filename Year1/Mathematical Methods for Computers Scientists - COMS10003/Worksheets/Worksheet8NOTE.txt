@@ -1,0 +1,4 @@
+IF (a,b)=d ==> a=dm and b=dn
+
+(m,n)=1 because if it is not 1 then there is space for d to be greater. Since d is the greatest possible
+divisor, the gcd of (m,n) must be 1.

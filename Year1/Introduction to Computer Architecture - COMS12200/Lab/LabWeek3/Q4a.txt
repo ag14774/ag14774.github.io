@@ -1,0 +1,7 @@
+For a number X to be an exact power of two, only one of its bits has to be 1.
+Therefore:
+Assuming X is an exact power of two, X-1 will always return a number that is not power of two and has all its bits flipped
+starting with the only bit that was 1 in the first place upto and including the LSB. e.g 00100000 will become 00011111.
+Comparing those two numbers (X and X-1) we can see that there are no "common" bits. Therefore we can use the AND gate
+and get back a zero-value. Until now, we have (x & (x-1)). However, we want to get a non-zero value only when the number
+is not an exact power of two. Therefore the expression is: !(x & (x-1))

@@ -1,0 +1,8 @@
+https://www.cs.bris.ac.uk/Teaching/Resources/COMS10002/
+https://www.cs.bris.ac.uk/forum/index.jsp?title=COMS10002
+
+
+Books:
+C Programming in Easy Steps
+C Pocket Reference
+Original C Dennis Ritchie

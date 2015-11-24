@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Worksheet 1: C Syntax and Versions: Answers</title>
+<style>
+h1, h2 { text-align:center; }
+pre { margin-left:40px; }
+</style>
+</head>
+<body>
+
+<h1>Worksheet: C Syntax and Versions: Answers</h1>
+
+<h2>Mike Fraser<br />Week 1</h2>
+
+<p>The idea was to compile this program, look at the errors and warnings from
+the compiler, and fix the bugs.</p>
+
+<pre>#include &lt;stdioo.h&gt;
+#inclde &lt;stdlib.h&gt;
+
+mian(void) {
+  printf("Hello")
+  printf(World);
+  printf("\");
+  return 0;
+)
+</pre>
+
+<p>The bugs were:</p>
+
+<ol>
+
+<li>The filename of the first included library is spelled incorrectly:</li>
+
+<pre>#include &lt;stdioo.h&gt;       ->      #include &lt;stdio.h&gt;
+</pre>
+
+<li>The keyword <code>include</code> on the second line is spelled
+incorrectly</li>
+
+<pre>#inclde &lt;stdlib.h&gt;        ->      #include &lt;stdlib.h&gt;
+</pre>
+
+<li>The <code>main</code> function, which all programs need, is spelled
+incorrectly</li>
+
+<pre>mian(void) {              ->      main(void) {
+</pre>
+
+<p>Also, strictly speaking, the return type of the <code>main</code> function
+is missing</p>
+
+<pre>main(void) {              ->      int main(void) {
+</pre>
+
+<li>A semicolon is missing from the end of a statement</li>
+
+<pre>printf("Hello")           ->      printf("Hello");
+</pre>
+  
+<li>Double quotes are missing from a string constant</li>
+
+<pre>printf(World);            ->      printf("World");
+</pre>
+
+<p>Or, better, add a space to separate the two words when printed</p>
+
+<pre>printf(World);            ->      printf(" World");
+</pre>
+
+<li>The backslash character in a string is an escape character, which gives a
+special meaning to the following character, so <code>\n</code> means newline,
+<code>\\</code> means a backslash character, and <code>\"</code> means an
+actual double quote character which is included in the string rather than
+closing it.  So <code>"\"</code> is an incomplete string because it has no
+closing double quote.  The sequence of print statements needs a newline, so the
+best fix is</li>
+
+<pre>printf("\");              ->      printf("\n");
+</pre>
+
+<li>The function is closed with a parenthesis (round bracket) rather than a
+brace (curly bracket)</li>
+
+<pre>)                         ->      }
+</pre>
+
+</ol>
+
+<p>The idea behind the second part of the worksheet was to compile this program
+under the C99 standard and investigate the issues.  (Note in the original
+worksheet, the newline at the end of the printf was missing.)</p>
+
+<pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+// Calculate 3*4 and print the result
+    printf("3*4=%d\n", 3*4);
+    return 0;
+}
+</pre>
+
+<p>If the program is in a file <code>twelve.c</code> as suggested, the
+compiling command is:</p>
+
+<pre>gcc -std=c99 twelve.c -o twelve
+</pre>
+
+<p>One issue is that the line beginning <code>//</code> is a one-line comment,
+which is one of the additions in the C99 standard, so it gets accepted.  If you
+compile using the C89 standard, i.e. with:</p>
+
+<pre>gcc -std=c89 twelve.c -o twelve
+</pre>
+
+<p>then it is not accepted. The only kind of comment accepted in C98 is the multi-line kind starting with <code>/*</code> and ending with <code>*/</code></p>
+
+<pre>/* Calculate 3*4 and print the result */
+</pre>
+
+<p>By the way, if you compile without specifying a standard,
+i.e. with <code>gcc twelve.c -o twelve</code>, you are compiling to the C89
+standard, but with gcc-specific extensions.  It is not a good idea to use
+compiler extensions, because then the program will probably not compile on any
+other C compiler.  One of the main aims of a good C programmer is to produce
+programs which are as stable as possible, across platforms and C
+compilers.</p>
+
+</body>
+</html>

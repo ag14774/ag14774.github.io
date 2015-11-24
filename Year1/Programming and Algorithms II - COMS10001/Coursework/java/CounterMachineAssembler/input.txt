@@ -1,0 +1,20 @@
+LDR r0,0
+LDR r1,1
+:loop
+INC r1
+INC r1
+INC r1
+INC r1
+INC r1
+INC r1
+INC r1
+INC r1
+DEC r0
+JNZ :loop
+DEC r1
+DEC r1
+DEC r1
+DEC r1
+DEC r1
+DEC r1
+DEC r1

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Worksheet 1: C Syntax and Versions</title>
+<style>
+h1, h2 { text-align:center; }
+pre { margin-left:40px; }
+</style>
+</head>
+<body>
+
+<h1>Worksheet: C Syntax and Versions</h1>
+
+<h2>Week 1<br />Mike Fraser</h2>
+
+<p>Below is a simple C program, helloworld.c, which has several mistakes which
+will prevent it from compiling. These are called 'syntax' errors, meaning that
+the code does not conform to the required C language syntax. Copy the program
+into a file and repair it so it compiles and runs. There are 7 problems with
+the code. Try compiling with the <code>-Wall</code> flag, i.e. <code>gcc -Wall
+helloworld.c -o helloworld</code>, to see what extra information you
+receive.</p>
+
+<pre>#include &lt;stdioo.h&gt;
+#inclde &lt;stdlib.h&gt;
+
+mian(void) {
+  printf("Hello")
+  printf(World);
+  printf("\");
+  return 0;
+)
+</pre>
+
+<p>You may find the gcc compiler error guide at the following URL useful:</p>
+
+<p style="margin-left:40px;">
+<a href="https://www.cs.bris.ac.uk/Teaching/Resources/COMS10002/error.html"
+>https://www.cs.bris.ac.uk/Teaching/Resources/COMS10002/error.html</a>
+</p>
+
+<p>There are different C versions, the original ANSI C standard, sometimes
+called C89, then major revisions in 1999 (C99) and 2011 (C11). Read about this
+history here:</p>
+
+<p style="margin-left:40px;">
+<a href="http://en.wikipedia.org/wiki/C_(programming_language)#History"
+>http://en.wikipedia.org/wiki/C_(programming_language)#History</a>
+</p>
+
+<p>Some features of the C language vary between these different specifications,
+which means that not all C code is compatible with all C compilers or all other
+C code. The gcc compiler allows you to pick the version of C you are compiling
+using the <code>-std=</code> option, e.g. <code>gcc -std=c99 twelve.c -o
+twelve</code>. Copy the following C code into a file and compile and run it
+using the C99 standard.</p>
+
+<pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+// Calculate 3*4 and print the result
+    printf("3*4=%d", 3*4);
+    return 0;
+}
+</pre>
+
+<p>The first line beginning // is a 'comment', which is a request for the
+compiler to ignore the rest of the line. Re-compile the file with the C89
+standard. What happens? Can you find an alternative way of writing a comment
+which works properly for the C89 standard?</p>
+
+<p>Finally, look at the printf statement. What is different about it compared
+to the Hello World program. Change the values and see what happens. Can you
+find ways of doing other calculations?</p>
+
+</body>
+</html>

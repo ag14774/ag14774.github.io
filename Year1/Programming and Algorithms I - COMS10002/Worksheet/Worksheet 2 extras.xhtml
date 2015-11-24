@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Extras</title>
+<style>
+h1 { text-align:center; }
+pre, p.indent { margin-left:40px; }
+</style>
+</head>
+<body>
+
+<h1>Extras</h1>
+
+<h3>Ian Holyer, 9th October</h3>
+
+<p>If you find the worksheet easy, or finish it quickly, you might like to try
+these:</p>
+
+<ol>
+
+<li><p>Write a program which uses the <code>sizeof</code> function to find out
+how many bytes are used on the computer you are using for a value of each of
+these types:</p>
+
+<p class="indent"><code>char</code>
+<br/><code>short</code>
+<br/><code>int</code>
+<br/><code>long</code>
+<br/><code>long long</code> (using the C99 standard)
+<br/><code>float</code>
+<br/><code>double</code>
+<br/><code>char *</code> (or any other pointer type)
+</p>
+
+<p>Use Google to find out the different answers you might get for (a) 32 bit
+systems (b) 64-bit Linux (LP64) (c) 64-bit Windows (LLP64) (d) 32-bit programs
+running on 64-bit systems.  Note: these differences can cause immense problems,
+even though they do not affect "fully standard-compliant" programs.</p>
+
+</li>
+
+<li><p>A declaration such as <code>union u { t1 x; t2 y };</code> defines a
+type <code>union u</code> which allows the same memory to be used by two
+different types.  If a variable <code>v</code> is declared of this type,
+then <code>v.x</code> treats <code>v</code> as having type <code>t1</code>,
+and <code>v.y</code> treats it as having type <code>t2</code>.</p>
+
+<p>Normally, it is up to the programmer to remember how the memory is currently
+being used and to access it appropriately.  However, it is possible to 'cheat',
+by storing something as type <code>t1</code> and then extracting it as if it
+had type <code>t2</code>.  This works if the data stored happens to form a
+valid value of type <code>t2</code>.</p>
+
+<p>Write a program which uses a union type to store an <code>int</code> value
+and then examine it as an array of four bytes (<code>char</code>s).  Store
+an <code>int</code> value of 1234 in base 256, in order to number the bytes of
+the <code>int</code>, and then find out in what order those bytes are stored in
+memory.</p>
+
+<p>Use Google to find out about different byte orderings (little-endian,
+big-endian, middle-endian, bi-endian) and which common processors use which
+orderings.</p>
+
+<p>Does it make sense to ask what order the bits of a byte are stored in?</p>
+
+</li>
+
+<li><p>Write a program to help find out how memory (or at least virtual memory)
+is laid out on the computer you are using.  To do that, create pointers,
+re-interpret them as <code>int</code> or <code>long</code> integers, and print
+them out.  The aim is to answer these two questions.</p>
+
+<p>A C program uses three areas of memory: (a) static (for functions, constants
+and global data - everything the compiler knows about before the program runs),
+(b) the stack (for local variables declared inside functions) and (c) the heap
+(for lumps of memory allocated dynamically with the <code>malloc</code> family
+of functions).  What order are these areas of memory allocated in?</p>
+
+<p>Also, which direction does the stack go in, i.e. is new stack memory
+allocated by moving upwards or downwards in memory?</p></li>
+
+<li>A quine is a program that generates and prints out its own source code
+(without reading from its own source file).  Write a quine in C.  The main
+trick is to define a string and use it twice.</li>
+
+</ol>
+
+</body>
+</html>

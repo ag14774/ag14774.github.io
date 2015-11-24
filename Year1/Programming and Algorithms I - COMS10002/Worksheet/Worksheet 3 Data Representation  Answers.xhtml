@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Worksheet 3: Data Representation: Answers</title>
+<style>
+h1, h2 { text-align:center; }
+pre { margin-left:40px; }
+.undent { margin-left:-40px; }
+.letter { list-style-type: lower-alpha; }
+</style>
+</head>
+<body>
+
+<h1>Worksheet: Data Representation: Answers</h1>
+
+<h2>Mike Fraser<br />Week 3</h2>
+
+<ol>
+
+<li>
+<ol class="letter">
+
+<li><code>0</code> is an int.  Other values include 42, -789412123</li>
+
+<li><code>'0'</code> is a char. Other values include '+', 'Z' (note that the 's
+are important: 'Z' is the character constant representing the 26th letter of
+the alphabet in capital. Z without primes is something else, probably an
+identifier.</li>
+
+<li><code>'\0'</code> is also a char. Other values include 'A' and '0'!</li>
+
+</ol>
+<br/>
+</li>
+
+<li>
+<ol class="letter">
+<li><code>int 0</code> is <code>00000000</code></li>
+<li><code>int 1</code> is <code>00000001</code></li>
+<li><code>int 10</code> is <code>00001010</code></li>
+<li><code>int 100</code> is <code>01100100</code></li>
+<li><code>int -1</code> is <code>11111111</code></li>
+<li><code>int -10</code> is <code>11110110</code></li>
+<li><code>int -100</code> is <code>10011100</code></li>
+<li><code>unsigned 10</code> is <code>00001010</code></li>
+<li><code>unsigned 100</code> is <code>01100100</code></li>
+<li><code>unsigned 156</code> is <code>10011100</code></li>
+<li><code>unsigned 246</code> is <code>11110110</code></li>
+<li><code>unsigned 255</code> is <code>11111111</code></li>
+<li><code>char 'd'</code> is <code>01100100</code></li>
+<li><code>char '+'</code> is <code>00101011</code></li>
+</ol>
+<br/>
+</li>
+
+<li>
+<ol class="letter">
+<li><code>01100110</code> is: int 102, unsigned 102, char 'f'</li>
+<li><code>01000110</code> is: int 70, unsigned 70, char 'F'</li>
+</ol>
+<br/>
+</li>
+
+<li>
+<ol class="letter">
+<li><code>int 100 + 100 + 100 + 100</code> is -112</li>
+<li><code>unsigned 100 + 100 + 100 + 100</code> is 144</li>
+<li><code>int 100 + 100 + 100 - 400</code> is -100</li>
+<li><code>unsigned 100 + 100 + 100 - 400</code> is 156</li>
+<li><code>char '1' + 2</code> is the character '3' or the number 51 (they are
+the same)</li>
+<li><code>char '2' + 1</code> is the character '3' or the number 51</li>
+<li><code>char '1' + '2'</code> is the character 'c' or the number 99</li>
+<li><code>char 'p' + ('A' - 'a')</code> is the character 'P' or the number
+80</li>
+</ol>
+<br/>
+</li>
+
+<li>
+<ol class="letter">
+<li><code>1</code> is <code>0 01111111 00000000000000000000000</code></li>
+<li><code>0.5</code> is <code>0 01111110 00000000000000000000000</code></li>
+<li><code>0.125</code> is <code>0 01111100 00000000000000000000000</code></li>
+<li><code>-257</code> is <code>1 10000111 00000001000000000000000</code></li>
+<li><code>0.1</code> is <code>0 01111011 10011001100110011001100</code></li>
+<li><code>0 10000000 10000000000000000000000</code> is <code>3</code></li>
+<li><code>0 01111111 01010101000000000000000</code>
+is <code>1.33203125</code></li>
+<li><code>1 + 0.1</code> is <code>1.1</code> (rounded)</li>
+<li><code>1 + 0.0000001</code> is <code>1.0000001192</code> (rounded)</li>
+<li><code>1 + 0.00000005</code> is <code>1</code></li>
+<li><code>(((1 + 0.00000005) + 0.00000005) + 0.00000005)</code>
+is <code>1</code></li>
+<li><code>(1 + (0.00000005 + (0.00000005 + 0.00000005)))</code>
+is <code>1.0000001192</code> (rounded)</li>
+</ol>
+<br/>
+</li>
+
+<li>
+<ol class="letter">
+<li>Roughly 63<sup>7</sup> &#8773; 64<sup>7</sup> = 2<sup>42</sup> &#8773; 4 x
+10<sup>12</sup></li>
+<li>(2 x 26 + 1) x (2 x 26 + 1 + 10)<sup>N-1</sup> = 53 x 63<sup>N-1</sup></li>
+</ol>
+<br/>
+</li>
+
+
+</ol>
+
+</body>
+</html>

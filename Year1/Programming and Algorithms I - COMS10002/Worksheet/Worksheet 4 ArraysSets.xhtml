@@ -1,0 +1,190 @@
+<!DOCTYPE html [
+<!ENTITY nbsp "&#160;" >
+]>
+<!-- Deliver as XHTML -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB" xml:lang="en-GB">
+<head>
+<title>Worksheet 4: Arrays, Sets</title>
+<style>
+h1, h2 { text-align:center; }
+pre { margin-left:40px; }
+.undent { margin-left:-40px; }
+.letter { list-style-type: lower-alpha; }
+.img { float:right; }
+</style>
+</head>
+<body>
+
+<h1>Worksheet: Arrays, Sets</h1>
+
+<h2>Mike Fraser<br />Week 4</h2>
+
+<p>In this worksheet you will be faced with problems to do with pointers,
+arrays and sets. Do NOT use a calculator. Assume that an integer occupies four
+bytes of memory, and that a pointer occupies 2 bytes of memory</p>
+
+<ol>
+
+<li><p>One way to represent a 'set' in C is to use an array. For example, a set
+for a domain with 24 values can be represented with an array of 24 integers,
+a <code>1</code> value in array element <var>i</var> indicates
+that <var>i</var> is in the set, a <code>0</code> value indicates
+that <var>i</var> is not in the array.</p>
+
+<ol class="letter">
+<li><p>How many bytes does this array occupy?</p></li>
+<li><p>How many different values could be stored in this array? (this is a
+*big* number, just write it down as a power of 2)</p></li>
+<li><p>How many sets are there in a domain with 24 elements (in other words,
+what is the cardinality of the power-set?)</p></li>
+<li><p>How many bytes would you <i>need</i> at least to store a set for a
+domain with 24 values?</p></li>
+</ol>
+
+</li>
+
+<li><p>An efficient way to store a set is to use a single unsigned
+integer <code>y</code>, each bit representing whether a value is in the set or
+not.</p>
+
+<ol class="letter">
+
+<li><p>How big can the domain be for sets stored in this way?</p></li>
+
+<li><p>Write a statement down to add element <code>i</code> to the set stored
+in <code>y</code> and write an if statement to test whether
+element <code>j</code> is in the set stored in <code>y</code>. The following
+operators can be useful:</p>
+
+<ul>
+
+<li>The operator <code>y&gt;&gt;j</code> shifts the number <code>y</code> right
+by <code>j</code> binary places.</li>
+
+<li>The operator <code>y&lt;&lt;j</code> shifts the number <code>y</code> left
+by <code>j</code> places.</li>
+
+<li>The operator <code>y&amp;x</code> calculates a bitwise AND.</li>
+
+<li>The operator <code>y|x</code> calculates a bitwise OR.</li>
+
+</ul>
+
+</li>
+
+</ol>
+
+</li>
+
+<li><p><b>Pointers.</b> Assume the following code, calculate the values of
+variables <code>e</code>, <code>f</code>, <code>g</code>, <code>h</code>, after
+every statement. Assume that they are stored at memory
+addresses <code>4</code>, <code>8</code>, <code>12</code>,
+and <code>16</code>. Also write down the values of
+pointers <code>p</code>, <code>q</code>, and <code>r</code>, which are stored
+at addresses <code>20</code>, <code>22</code> and <code>24</code>. Draw the
+memory contents in a picture as shown below.</p>
+
+<p class="img"><img src="grid.png"/></p>
+
+<pre>void x( void ) {
+  int g=1, h=2 ;
+  int *p = &amp;g, *q = &amp;h ;
+  *p = 4 ;
+  h = g+1 ;
+  *q = *q + 1 ;
+  p=q;
+  *p = *p + 1 ;
+}
+
+void y( int *p, int *q ) {
+  *p = *p + *q ;
+  *q = *p - *q ;
+  *p = *p - *q ;
+}
+
+void z( int h, int *p ) {
+  int g = 9 ;
+  int **q = &amp;p ;
+  int *r = &amp;g ;
+  **q = 1 ;
+  *q = r ;
+  **q = h+4 ;
+}
+
+int main( void ) {
+  int e = 4, f = 7 ;
+  x() ;
+  y( &amp;e, &amp;f ) ;
+  y( &amp;f, &amp;f ) ;
+  z( e, &amp;e ) ;
+  return 0 ;
+}
+</pre>
+
+<ol class="letter">
+
+<li>Write down the results up to and including the call
+to <code>x</code>.</li>
+
+<li>Write down the results up to and including the first call
+to <code>y</code>.</li>
+
+<li>Write down the results up to and including the second call
+to <code>y</code>.</li>
+
+<li>Write down the results up to and including the call
+to <code>z</code>.</li>
+
+</ol>
+
+</li>
+
+<li><p>Assume the following code, calculate the values of the
+array <code>a</code> and pointer <code>p</code> after every statement. Assume
+that the array <code>a</code> is stored from memory address <code>16</code>
+onwards. Assume that <code>i</code> is stored at location <code>12</code>,
+and <code>p</code> at location
+<code>10</code>.</p>
+
+<pre>void x( int p[] ) {
+  p[0] = p[0] + 1 ;
+  p[3] = p[3] * 2 ;
+}
+
+void y( int *p ) {
+  p[1] = p[1] + 2 ;
+  p[2] = p[2] * 3 ;
+}
+
+int main( void ) {
+  int a[10], i ;
+  for( i=0 ; i&lt;10 ; i++ ) {
+    a[i] = i*i ;
+  }
+  x( &amp;a[0] ) ;
+  x( &amp;a[3] ) ;
+  y( &amp;a[6] ) ;
+  return 0 ;
+}
+</pre>
+
+<ol class="letter">
+
+<li>Write down the results up to and including the first call
+to <code>x</code>.</li>
+
+<li>Write down the results up to and including the second call
+to <code>x</code>.</li>
+
+<li>Write down the results up to and including the call
+to <code>y</code>.</li>
+
+</ol>
+
+</li>
+
+</ol>
+
+</body>
+</html>

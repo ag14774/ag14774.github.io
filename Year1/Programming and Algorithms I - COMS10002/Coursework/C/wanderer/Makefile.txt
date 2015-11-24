@@ -1,0 +1,20 @@
+# Compile with standard options
+GCC = gcc -std=c99 -pedantic -O3 -Wall -Werror
+
+# Make entity module by default if you type just "make".
+default: entity
+
+# Compile and test the display module
+display: display.h display.c
+	$(GCC) -DTEST_DISPLAY -o display display.c
+	./display
+
+# Compile and test the grid module
+grid: grid.h grid.c display.h display.c
+	$(GCC) -DTEST_GRID -o grid grid.c display.c
+	./grid
+
+# Compile and test the entity module
+entity: entity.h entity.c grid.h grid.c display.h display.c
+	$(GCC) -DTEST_ENTITY -o entity entity.c grid.c display.c
+	./entity

@@ -1,0 +1,14 @@
+An inner product is a generalization of the dot product. In a vector space, it is a way to multiply vectors together, with the result of this multiplication being a scalar.
+
+
+A vector space together with an inner product on is is called an inner product space.
+Examples of inner product spaces include:
+<x,y> means inner product of x and y
+1) The real numbers R, where the inner product is given by
+	<x,y> = xy. (The normal multiplication)
+
+2) The Euclidean space R^n, where the inner product is given by the dot product.
+	<(x1,x2,...,xn),(y1,y2,...,yn)> = x1y1 + x2y2 + ... + xnyn
+
+3) The vector space of REAL FUNCTIONS whose domain is a closed interval [a,b] with inner product.(Periodic functions)
+	<f,g> = \integration_a^b (f g dx)

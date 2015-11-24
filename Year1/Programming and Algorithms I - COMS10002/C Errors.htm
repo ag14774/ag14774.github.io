@@ -1,0 +1,187 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-gb" xml:lang="en-gb"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head>
+    <title>Bristol University | Department of Computer Science</title>
+    <base target="_top">
+    
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="University of Bristol" name="DCTERMS.creator">
+    <meta content="en-GB" name="DCTERMS.language">
+    <meta content="2013-09-09" name="DCTERMS.modified">
+    <meta content="2013-07-15" name="DCTERMS.created">
+    <meta content="text/html" name="DCTERMS.format">
+    <meta content="University of Bristol" name="DCTERMS.publisher">
+    <meta content="http://www.bristol.ac.uk/university/web/terms-conditions.html" name="DCTERMS.rights">
+    
+    <link rel="icon" href="http://www.bristol.ac.uk/favicon.gif" type="image/gif">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/uob_2013/normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/uob_2013/uobcms_corporate.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 1150px)" href="/styles/uob_2013/desktop.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/styles/uob_2013/uobcms_print.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/styles/uob_2013/boxes.css">
+    <link rel="stylesheet" type="text/css" media="print" href="/styles/uob_2013/sliders.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/uob_2013/efl-menu.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/uob_2013/homepage-base.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/uob_2013/computer_science.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/uob_2013/department.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/styles/uob_2013/news.css">
+    
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/uob_2013/dependencies/jquery.cycle2.min.js"></script>
+    <script type="text/javascript" src="/scripts/uob_2013/sm-slider.min.js"></script>
+    <script type="text/javascript" src="/scripts/uob_2013/utilities/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/uob_2013/respond.min.js"></script>
+    <script type="text/javascript" src="/scripts/uob_2013/cs_script.js"></script>
+    <script type="text/javascript" src="/scripts/csyear.js"></script>
+    <script type="text/javascript" src="/scripts/uob_2013/cs_bodyscript.js"></script> 
+<!--nomodify-->
+<title>Interpreting errors</title>
+</head>
+<body id="age" class="jsActive">
+    <!--NAVIGATION-->
+       
+
+<!--BANNER-->
+  
+
+
+
+
+
+
+<div id="uobcms-wrapper" class="width-master"> 
+
+<!--MkFrame-->
+
+<h1>Interpreting errors</h1>
+
+This page gives a brief explanation of error messages produced by the
+GNU C compiler, and explains what you probably did wrong. This page only discusses the errors that the compiler produces, i.e., errors that inform you that your program is syntactically incorrect or has incorrect types. Programs that are
+syntactically correct aren't necessarily functionally correct. This page is a basic how-to: for more information, check the other sources available such as the lecture notes, text books, helpdesk and lab supervisors.
+<p>
+
+You C compiler, gcc, gives pretty simplistic
+error messages. In order to interpret these error messages well, you
+have to `think' like a compiler, so you have to know a bit about how
+the compiler works. You will have to place yourself in the place of the
+compiler to find an error.
+</p><p>
+GCC will typically continue to compile your code, even when it
+has found an error. Sometimes this causes it to complain bitterly about
+173 other errors which aren't there at all; the first error derailed the compiler. Therefore you will always have to repair errors
+starting at the first error. If subsequent errors seem not to make
+sense, it is wise to try to compile the program again.
+</p><p>
+sometimes the GNU C compiler produces warnings. The difference
+between a warning and an error is that the compiler has detected
+something that is probably wrong, but it is not strictly forbidden
+either. There are flags available to force gcc to show you all the warnings it thinks are in your code: try <tt>gcc -Wall -pedantic file.c</tt>. It is wise to at least check, if not get rid of, all warnings before you run a program.
+
+</p><h3>gcc syntax errors</h3>
+
+<dl>
+<p></p><dt><tt>';' expected</tt></dt><dd>
+
+This is a catch all error message. It indicates that the compiler lost
+track of your program at the line indicated; the actual error might have
+been several lines earlier. Probable causes:
+<ul>
+<li>You forgot to terminate a statement with a ';'
+</li><li>A missing operator in an expression (eg a = x y ; instead of a = x * y ;)
+</li><li>Too many closing parentheses
+</li></ul>
+
+<p></p></dd><dt><tt>Parse error before `...'</tt></dt><dd>
+
+This is a general error message. It indicates that gcc has lost the plot before that token on that line. Usually it is because you missed out a comma, semi-colon, operator, or any other typing error.
+
+<p></p></dd><dt><tt>missing terminating ' character</tt></dt><dd>
+You have used a ' to indicate a character , but forgot the closing "'"
+
+<p></p></dd><dt><tt>undefined preprocessing directive</tt></dt><dd>
+You made a typo in one of the lines starting with a '#', for example
+'#include', '#define', etc.
+
+<p></p></dd><dt><tt>......: No such file or directory</tt></dt><dd>
+You probably made a typo in a '#include' line, or you have used angular
+brackets '&lt; &gt;' around an include file that is in your own directory space
+
+<p></p></dd><dt><tt>missing terminating " character</tt></dt><dd>
+You have used a " to make a string, but forgot the closing '"'
+
+</dd></dl>
+
+
+<h3>gcc type errors</h3>
+
+<dl>
+<dt><tt>`...' undeclared (first use in this function)</tt></dt><dd>
+
+This error indicates that you have used a variable or function parameter without declaring it. Note that in C (unlike C++ or Java), each variable must be declared at the beginning of a block / function, i.e. before you do anything else like calculations of function calls.
+
+<p></p></dd><dt><tt>too many/few arguments to function `...'</tt></dt><dd>
+
+This error means that you have passed the wrong number of arguments to a
+function.
+
+<p></p></dd><dt><tt>implicit declaration of function `bopen'</tt></dt><dd>
+
+This error message indicates that you are using a function which is not
+defined properly. Probable causes are:
+<ul>
+<li>You forgot to include a file, either one of the system files
+     (<tt>#include "stdio.h"</tt> for example) or one of your own
+     include files (if you are making a program with multiple modules later in the unit)
+</li><li>You used a function before you have actually defined it. For
+    example, your <tt>main</tt> function calls a function <tt>dowork</tt>,
+    but this function comes <em>after</em> <tt>main</tt> in the input file.
+    Here you can either reverse the order the functions appear in the file, or <tt>declare</tt> a function (i.e. provide a prototype for its return type and parameters) before you define it, e.g.:
+    <blockquote>
+    <tt>
+    int dowork(int blah);<br><br>
+    int main(void) {<br>
+    <ul>
+        ...<br>
+	x=dowork(3);<br>
+	...<br>
+    </ul>
+    }<br><br>
+    int dowork(int blah) {<br>
+    <ul>
+        ...<br>
+    </ul>
+    }
+    </tt>
+    </blockquote>
+    
+
+</li></ul>
+
+<p></p></dd><dt><tt>incompatible types in ...</tt></dt><dd>
+
+This is a very general error. It means that you have used a
+value of one type where it should have had another type, and gcc cannot reconcile the value with the type.
+This may for example be because you assign a real number to a string variable.
+</dd></dl>
+
+<h3>gcc link errors</h3>
+
+<dl>
+<dt><tt>undefined reference to `main'</tt></dt><p>
+You either put static in front of main (making it <em>local</em> to that
+file) or you forgot to supply a main procedure.
+
+</p><p></p><dt><tt>Undefined function cos</tt></dt><dd>
+You are using a maths function but forgot to use the `-lm' flag on the command line to include the maths library.
+<p></p></dd></dl>
+
+
+<!--MkFrame-->
+</div>
+
+<!--FOOTER-->
+<!--UOB EDITED FOOTER-->
+
+
+
+
+</body></html>
