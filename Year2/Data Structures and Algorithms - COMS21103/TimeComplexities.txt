@@ -1,0 +1,79 @@
+﻿******ADD GRAPH TIME COMPLEXITIES*********
+
+**Traverse a graph**
+Using BFS(queues) or DFS(stacks) : Adjacency Lists:  O(|E|)
+				   Adjacency Matrix: O(|V|^2)
+
+**Shortest path in unweighted graph**
+Using BFS : O(|V|+|E|)
+
+**Kruskal's algorithm**
+Using disjoint-set data structure: O(|E|log |V|)
+
+**Dijkstra's algorithm**
+Using Priority Queue: O(|V|Tinsert + |V|Textract + |E|Tdecrease)
+If we implement it using a binary heap: O((|V|+|E|)log |V|)
+
+**Line Intersection**
+Using Priority queues for event points
+and self balancing tree for status of sweep line: O(nlog n + klog n)
+
+**Bellman-Ford**
+O(|V||E|)
+
+**Johnsons**
+O(|V||E|log |V|)
+
+**Stable Matching - GS**
+O(n^2)
+
+**Stable Roomate - Irving's**
+O(n^2)
+
+**Order Statistics**
+Rand-Select : Expected O(n), Worst: O(n^2)
+BFPRT : O(n)
+
+**Ford-Fulkerson Method - Max Flow**
+O(|f*||E|) because each iteration takes O(E) time to adjust all edges
+
+**Edmonds-Karp Algorithm - Max Flow**
+O(|V|E^2) because each iteration takes O(E) time to adjust all edges
+
+**String Matching**
+Naive Method: Θ(n-m+1)*m = Θ(nm)
+KMP : Θ(n)                       Precompute: Θ(m)
+BMH : Worst: Θ(nm), Best: O(n/m) Precompute: O(m+|Σ|)
+FSM : Worst: Θ(n)                Precompute: O(m|Σ|)
+
+***Data Structures***
+**Priority queue**
+			 INSERT   DECREASE-KEY	EXTRACT-MIN
+  Unsorted Linked List	  O(1)	     O(n)	    O(n)
+    Sorted Linked List	  O(n)	     O(n)	    O(1)
+           Binary Heap  O(log n)   O(log n)	  O(log n)
+        Fibonacci Heap    O(1)	     O(1)	  O(log n) phi(H) = trees(H) + 2marks(H)
+Fibonacci Heap(Actual)	  O(1)	  O(marks(H))	O(tr(H)+d(n))
+
+**Disjoint-set data structures using reverse trees**
+Make-Set : O(1)
+   Union : O(log n)
+Find-Set : O(log n)
+
+**2-3-4 Trees**
+  Find : O(log n)
+Insert : O(log n)
+Delete : O(log n)
+
+**Skip Lists**
+  Find : O(log n)
+Insert : O(log n)
+Delete : O(log n)
+
+***Sorting Algorithms***
+Insertion Sort : Best Case: O(n), Worst Case: O(n^2)
+    Merge Sort : T(n) = T(n/2)+Θ(n) = Θ(nlog n)
+     Heap Sort : Θ(nlog n)
+Selection Sort : O(n^2)
+ Counting Sort : O(n+k)
+    Radix Sort : Θ(d(n+k)) if the stable sort takes Θ(n+k)

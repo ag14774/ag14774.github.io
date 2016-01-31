@@ -1,0 +1,38 @@
+<taskgraph>
+<task>
+  <name>ant</name>
+  <inFunction>ant</inFunction>
+</task>
+<task>
+  <name>main</name>
+  <inFunction>main</inFunction>
+</task>
+<task>
+  <name>_task_0</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <core>1</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_1</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <core>2</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_2</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <core>3</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_3</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <core>4</core>
+  <inPar/>
+</task>
+</taskgraph>

@@ -1,0 +1,21 @@
+WRS 0
+WRS 5
+WRS 11
+HALT
+DATA 116 ; t 
+DATA 101 ; e 
+DATA 115 ; s 
+DATA 116 ; t 
+DATA 0 ;  
+DATA 116 ; t 
+DATA 101 ; e 
+DATA 115 ; s 
+DATA 116 ; t 
+DATA 50 ; 2 
+DATA 0 ;  
+DATA 116 ; t 
+DATA 101 ; e 
+DATA 115 ; s 
+DATA 116 ; t 
+DATA 51 ; 3 
+DATA 0 ;  

@@ -1,0 +1,38 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+import java.util.Set;
+
+
+public class CleanUp {
+    
+/*    public static void removeDeadCode(Set<String> labelsUsed, ArrayList<Instruction> instructions){
+        ListIterator<Instruction> it = instructions.listIterator(0);
+        while(it.hasNext()){
+            Instruction temp = it.next();
+            if(temp.opcode.equals(anObject))
+        }
+    }*/
+
+    public static void LabelCleanUp(Set<String> labelsUsed, ArrayList<Instruction> instructions){
+        Iterator<Instruction> it = instructions.iterator();
+        while(it.hasNext()){
+            Instruction temp = it.next();
+            if(!temp.getLabel().equals("") && !labelsUsed.contains(temp.getLabel())){
+                temp.setLabel("");
+                if(temp.opcode.equals(""))
+                    it.remove();
+            }
+        }
+    }
+    
+/*    public static Set<String> analyseLabelUsage(ArrayList<Instruction> instructions){
+        Set<String> labelsUsed = new HashSet<String>();
+        for(Instruction in : instructions){
+            switch(in.opcode){
+            case 
+            }
+        }
+    }*/
+    
+}

@@ -1,0 +1,32 @@
+WRS 8
+WRS 6
+WRS 0
+WRS 6
+WRS 8
+WRS 6
+WRS 0
+WRS 8
+WRS 0
+WRS 14
+WRS 14
+WRS 14
+WRS 8
+WRS 6
+WRS 0
+HALT
+DATA 119 ; w 
+DATA 111 ; o 
+DATA 114 ; r 
+DATA 108 ; l 
+DATA 100 ; d 
+DATA 0 ;  
+DATA 32 ;   
+DATA 0 ;  
+DATA 104 ; h 
+DATA 101 ; e 
+DATA 108 ; l 
+DATA 108 ; l 
+DATA 111 ; o 
+DATA 0 ;  
+DATA 10 ;  
+DATA 0 ;  

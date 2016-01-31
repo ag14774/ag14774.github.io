@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+public class RegisterAllocator {
+	static ArrayList<HashSet<String>> in = new ArrayList<HashSet<String>>();
+	static ArrayList<HashSet<String>> out = new ArrayList<HashSet<String>>();
+	static ArrayList<HashSet<String>> in2 = new ArrayList<HashSet<String>>();
+    static ArrayList<HashSet<String>> out2 = new ArrayList<HashSet<String>>();
+	
+	static boolean adjacency[][];
+	
+	static int initializeSets(ArrayList<Instruction> instructions){
+		int n = instructions.size();
+		for(int i = 0;i<n;i++){
+			in.add(new HashSet<String>());
+			out.add(new HashSet<String>());
+			in2.add(new HashSet<String>());
+            out2.add(new HashSet<String>());
+		}
+		return n;
+	}
+	
+	static void createGraph(){
+		
+	}
+	
+	static boolean conditionCheck(){
+	    for(int i = 0;i<in.size();i++){
+	        if(!in.get(i).equals(in2.get(i)))
+	            return false;
+	        if(!out.get(i).equals(out2.get(i)))
+                return false;
+	    }
+	    return true;
+	}
+	
+	static void livenessAnalysis(ArrayList<Instruction> instructions){
+		int n = initializeSets(instructions);
+		
+		//initialize out(last) here.
+		do {
+    		for(int i = n-1 ; i>=0 ; i--){
+    			Instruction cur = instructions.get(i);
+    			in2.get(i).clear();
+    			in2.get(i).addAll(in.get(i));
+    			out2.get(i).clear();
+    			out2.get(i).addAll(out.get(i));
+    			out.get(i).clear();
+    			for(int j = i+1;j<n;j++){
+    			    out.get(i).addAll(in.get(j));
+    			}
+    			in.get(i).clear();
+    			in.get(i).addAll(cur.use());
+    			Set<String> temp = new HashSet<String>();
+    			temp.addAll(out.get(i));
+    			temp.removeAll(cur.def());
+    			in.get(i).addAll(temp);
+    		}
+		} while(!conditionCheck());
+		
+		for(int i = 0;i<n;i++){
+			System.out.println(i+" in:"+in.get(i).toString()+" out:"+out.get(i).toString());
+		}
+		
+	}
+	
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1446123445596_1" label="CellularAutomatonFarm" name="CellularAutomatonFarm">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Game-of-Life" type="4"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1443360819669_0" label="Window Working Set" name="Aggregate for window 1443360819668"/>
+<mruList name="CellularAutomatonFarm"/>
+</workingSetManager>

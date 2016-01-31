@@ -1,0 +1,9 @@
+15:51:24 **** Incremental Build of configuration Default for project Game-of-Life ****
+xmake all 
+Checking build modules
+Using build modules: lib_i2c(3.0.0) lib_xassert(2.0.0) lib_logging(2.0.0)
+xmake[1]: `bin//app_accelerometer_demo.xe' is up to date.
+Build Complete
+
+15:51:25 Build Finished (took 910ms)
+

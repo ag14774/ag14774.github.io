@@ -1,0 +1,539 @@
+<preCompilationAnalysis file="../src/Lab2QueenAnts.xc">
+<fDef name="ant" global="true" noreturn="true" doNotSpecialize="false" numParams="5"/>
+<fDef name="delay_microseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_milliseconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="delay_seconds" global="true" noreturn="false" doNotSpecialize="true" numParams="1"/>
+<fDef name="main" global="true" noreturn="false" doNotSpecialize="false" numParams="0"/>
+<fDef name="queen" global="true" noreturn="true" doNotSpecialize="false" numParams="6"/>
+<fDef name="superqueen" global="true" noreturn="true" doNotSpecialize="false" numParams="3"/>
+<fDef name="topqueen" global="true" noreturn="true" doNotSpecialize="false" numParams="2"/>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="delay_ticks_longlong" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="printf" global="true" numArgs="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="superqueen" global="true" numArgs="3" impId="0">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="null"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="superqueen" global="true" numArgs="3" impId="1">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="superqueen" global="true" numArgs="3" impId="2">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queen" global="true" numArgs="6" impId="3">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queen" global="true" numArgs="6" impId="4">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queen" global="true" numArgs="6" impId="5">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="queen" global="true" numArgs="6" impId="6">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="5">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="7">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="8">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="9">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="2"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="10">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="3"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="11">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="4"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="12">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="5"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="13">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="6"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+</fCall>
+<fCall name="ant" global="true" numArgs="5" impId="14">
+  <arg num="0">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="1">
+    <values>
+      <value type="intval"><intval isSigned="true" val="7"/></value>
+    </values>
+  </arg>
+  <arg num="2">
+    <values>
+      <value type="unknown"/>
+    </values>
+  </arg>
+  <arg num="3">
+    <values>
+      <value type="intval"><intval isSigned="true" val="1"/></value>
+    </values>
+  </arg>
+  <arg num="4">
+    <values>
+      <value type="intval"><intval isSigned="true" val="0"/></value>
+    </values>
+  </arg>
+</fCall>
+</preCompilationAnalysis>

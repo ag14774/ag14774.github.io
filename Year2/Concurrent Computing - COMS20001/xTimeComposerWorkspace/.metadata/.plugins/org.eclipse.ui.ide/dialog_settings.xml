@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="CleanDialogSettings">
+		<item value="565" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_ALL"/>
+		<item value="true" key="TOGGLE_SELECTED"/>
+		<item value="462" key="DIALOG_HEIGHT"/>
+		<item value="678" key="DIALOG_X_ORIGIN"/>
+		<item value="234" key="DIALOG_Y_ORIGIN"/>
+		<item value="true" key="BUILD_NOW"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/media/ageorgiou/DATA/UoB/Year2/Concurrent Computing - COMS20001/xTimeComposerWorkspace/CellularAutomatonFarm"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="TaskPropertiesDialogSettings">
+		<item value="825" key="DIALOG_WIDTH"/>
+		<item value="1|FreeSans|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="315" key="DIALOG_HEIGHT"/>
+		<item value="548" key="DIALOG_X_ORIGIN"/>
+		<item value="303" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

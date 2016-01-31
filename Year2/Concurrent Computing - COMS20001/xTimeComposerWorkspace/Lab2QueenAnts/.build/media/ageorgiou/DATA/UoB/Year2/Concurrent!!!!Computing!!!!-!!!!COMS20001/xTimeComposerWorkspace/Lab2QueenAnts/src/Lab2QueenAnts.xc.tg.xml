@@ -1,0 +1,269 @@
+<taskgraph>
+<task>
+  <name>delay_seconds</name>
+  <inFunction>delay_seconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>delay_milliseconds</name>
+  <inFunction>delay_milliseconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>delay_microseconds</name>
+  <inFunction>delay_microseconds</inFunction>
+  <calledFunction>delay_ticks_longlong</calledFunction>
+</task>
+<task>
+  <name>topqueen</name>
+  <inFunction>topqueen</inFunction>
+</task>
+<task>
+  <name>superqueen</name>
+  <inFunction>superqueen</inFunction>
+</task>
+<task>
+  <name>queen</name>
+  <inFunction>queen</inFunction>
+</task>
+<task>
+  <name>ant</name>
+  <inFunction>ant</inFunction>
+</task>
+<task>
+  <name>main</name>
+  <inFunction>main</inFunction>
+</task>
+<task>
+  <name>_task_superqueen_0</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>superqueen</calledFunction>
+  <core>1</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_superqueen_1</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>superqueen</calledFunction>
+  <core>2</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_superqueen_2</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>superqueen</calledFunction>
+  <core>3</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_queen_3</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>queen</calledFunction>
+  <core>4</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_queen_4</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>queen</calledFunction>
+  <core>5</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_queen_5</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>queen</calledFunction>
+  <core>6</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_queen_6</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>queen</calledFunction>
+  <core>7</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_7</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>8</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_8</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>9</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_9</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>10</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_10</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>11</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_11</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>12</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_12</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>13</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_13</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>14</core>
+  <inPar/>
+</task>
+<task>
+  <name>_task_ant_14</name>
+  <inFunction>main</inFunction>
+  <parent>main</parent>
+  <calledFunction>ant</calledFunction>
+  <core>15</core>
+  <inPar/>
+</task>
+<connection>
+  <ends>
+    <end task="_task_superqueen_0" type="chan"/>
+    <end task="_task_superqueen_2" type="chan"/>
+  </ends>
+    <index>0</index>
+  <name>sq</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_superqueen_0" type="chan"/>
+    <end task="_task_superqueen_1" type="chan"/>
+  </ends>
+    <index>1</index>
+  <name>sq</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_superqueen_1" type="chan"/>
+    <end task="_task_queen_4" type="chan"/>
+  </ends>
+    <index>0</index>
+  <name>q2</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_superqueen_1" type="chan"/>
+    <end task="_task_queen_6" type="chan"/>
+  </ends>
+    <index>1</index>
+  <name>q2</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_superqueen_2" type="chan"/>
+    <end task="_task_queen_3" type="chan"/>
+  </ends>
+    <index>0</index>
+  <name>q1</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_superqueen_2" type="chan"/>
+    <end task="_task_queen_5" type="chan"/>
+  </ends>
+    <index>1</index>
+  <name>q1</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_3" type="chan"/>
+    <end task="_task_ant_7" type="chan"/>
+  </ends>
+    <index>0</index>
+  <name>c11</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_3" type="chan"/>
+    <end task="_task_ant_8" type="chan"/>
+  </ends>
+    <index>1</index>
+  <name>c11</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_4" type="chan"/>
+    <end task="_task_ant_11" type="chan"/>
+  </ends>
+    <index>0</index>
+  <name>c12</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_4" type="chan"/>
+    <end task="_task_ant_12" type="chan"/>
+  </ends>
+    <index>1</index>
+  <name>c12</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_5" type="chan"/>
+    <end task="_task_ant_9" type="chan"/>
+  </ends>
+    <index>0</index>
+  <name>c21</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_5" type="chan"/>
+    <end task="_task_ant_10" type="chan"/>
+  </ends>
+    <index>1</index>
+  <name>c21</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_6" type="chan"/>
+    <end task="_task_ant_13" type="chan"/>
+  </ends>
+    <index>0</index>
+  <name>c22</name>
+</connection>
+<connection>
+  <ends>
+    <end task="_task_queen_6" type="chan"/>
+    <end task="_task_ant_14" type="chan"/>
+  </ends>
+    <index>1</index>
+  <name>c22</name>
+</connection>
+</taskgraph>

@@ -1,0 +1,9 @@
+01:31:01 **** Incremental Build of configuration Default for project memcpy tests ****
+xmake CONFIG=Default all 
+Checking build modules
+ERROR: Cannot find module: lib_gpio
+/home/ageorgiou/opt/XMOS/xTIMEcomposer/Community_14.1.0/build/xcommon/module_xcommon/build/../build/Makefile.common1:637: *** Missing build modules. Cannot continue.  Stop.
+xmake: *** [check_module_deps] Error 2
+
+01:31:01 Build Finished (took 116ms)
+

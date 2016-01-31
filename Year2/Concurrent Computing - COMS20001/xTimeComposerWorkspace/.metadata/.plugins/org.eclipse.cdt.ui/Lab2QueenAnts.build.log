@@ -1,0 +1,17 @@
+19:15:16 **** Incremental Build of configuration Default for project Lab2QueenAnts ****
+xmake CONFIG=Default all 
+Checking build modules
+No build modules used.
+Creating Lab2QueenAnts.xe
+Constraint check for tile[0]:
+  Cores available:            8,   used:         15 .  FAILED
+  Timers available:          10,   used:         15 .  FAILED
+  Chanends available:        32,   used:         28 .  OKAY
+  Memory available:       262144,   used:      33496 .  OKAY
+    (Stack: 23252, Code: 9244, Data: 1000)
+Error: Constraints check FAILED for tile[0].
+xmake[1]: *** [bin//Lab2QueenAnts.xe] Error 1
+xmake: *** [bin//Lab2QueenAnts.xe] Error 2
+
+19:15:17 Build Finished (took 266ms)
+
