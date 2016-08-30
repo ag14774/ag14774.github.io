@@ -1,9 +1,0 @@
-23:36:28 **** Incremental Build of configuration Default for project Lab1PartBAnts ****
-xmake CONFIG=Default all 
-Checking build modules
-No build modules used.
-xmake[1]: `bin//Lab1PartBAnts.xe' is up to date.
-Build Complete
-
-23:36:28 Build Finished (took 168ms)
-

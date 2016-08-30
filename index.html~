@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Andreas Georgiou</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Andreas Georgiou</h1>
+      <h2 class="project-tagline">Computer Science student at University of Bristol</h2>
+    </section>
+
+    <section class="main-content">
+      <div class="row">
+          <a id="hello" class="anchor" href="#hello" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+          <h3>Hello!</h3>
+          <p>
+            My name is Andreas Georgiou. I am currently a third year computer science student at University of Bristol. I love technology, computers and maths. I am particularly interested in cryptography, computational neuroscience and artificial intelligence. Up for a chat? Contact me via any of the means below.
+          </p>
+      </div>
+
+      <div class="row">
+        <a id="contact-me" class="anchor" href="#contact-me" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>
+        <h3>Contact me</h3>
+        <ul>
+          <li><a href="https://github.com/ag14774" class="user-mention">Github</a></li>
+          <li><a href="https://uk.linkedin.com/in/andreas-georgiou-0731395b">LinkedIn</a></li>
+          <li><a href="https://twitter.com/andreasyeah1994">Twitter</a></li>
+          <li><a href="mailto:me@ageorgiou.com">Mail - me@ageorgiou.com</a></li>
+        </ul>
+      </div>
+
+      <footer class="site-footer">
+        <span class="site-footer-credits"><a href="https://keybase.io/ageorgiou/key.asc">If you need to contact me securely here is my public key.</a></span>
+      </footer>
+
+    </section>
+  </body>
+</html>

@@ -1,9 +1,0 @@
-00:32:16 **** Incremental Build of configuration Default for project ConsoleAntDefenderGame ****
-xmake CONFIG=Default all 
-Checking build modules
-No build modules used.
-xmake[1]: `bin//ConsoleAntDefenderGame.xe' is up to date.
-Build Complete
-
-00:32:16 Build Finished (took 164ms)
-
