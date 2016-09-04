@@ -1,0 +1,55 @@
+﻿Analogue to Digital:
+-Sampling
+-Quantisation
+
+Nyquist Shannon sampling theorem:
+-Max freq: f_max
+-Sampling rate = 2f_max
+-Take samples spaced 1/2f_max apart
+
+Speech:
+Sampling: 8KHz sampling rate - 8000 samples per second
+Quantisation: 8 bits/sample
+
+Audio CD:
+44 KHz
+16 bits
+
+Image:
+Sampling: Resolution - pixels
+Quantisation: 8 bits per colour, 3x8=24 bits
+
+Distance Measure Properties:
+-Non-negative: D(a,b)>0
+-Reflexive: D(a,b)=0 <=> a=b
+-Symmetric: D(a,b) = D(b,a)
+-Triangular Ineq: D(a,b)+D(b,c)>=D(a,c)
+Direct is faster than going indirectly
+
+Distance Metrics:
+-Minkowski Distance:
+--L1 - Manhattan Distance
+--L2 - Euclidean Distance
+--Linf - Chebyshev Distance = max(|x1-y1|,|x2-y2|,..)
+-Numerical Time Series
+--DTW to account for shifting and scalling. Replaces Euclidean one to one comparison with many to one
+
+DTW(X, Y) = D(x0, y0)+min{DTW(X, REST(Y)), DTW(REST(X), Y), DTW(REST(X), REST(Y))}
+
+Symbolic Distance:
+-Semantic
+-Syntactic
+
+Hamming Distance
+-Same length
+
+Edit Distance:
+-Any length. Can do better sometimes on same length than hamming distance
+
+Semantic - WUP:
+WUP(C1,C2) = 2N3 / (N1+N2+2N3)
+
+Normalisation:
+-Rescaling
+-Standardisation
+-Scaling to unit length

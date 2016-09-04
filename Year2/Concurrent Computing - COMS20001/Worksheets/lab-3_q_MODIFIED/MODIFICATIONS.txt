@@ -1,0 +1,1 @@
+It uses R0 to send the svc id instead of the immediate of the svc instruction﻿

@@ -1,0 +1,10 @@
+﻿In the ACTION[s,a] table(what to do if terminal symbol a is read in state s):
+shift s'      if s contains A->a.ab
+reduce A->g   if s contains A->g. (AND a elem of FOLLOW(A)) <-- This part is the difference between SLR and LR
+accept        if s contains S'->S.
+
+
+Algorithm:
+1)When action is shift s', push s' on stack and remove the matched terminal symbol from input(in the next loop)
+2)When action is reduce, pop |g| symbols from stack, find production on GOTO table and push.
+3)LOOP

@@ -1,0 +1,5 @@
+﻿Lecture4.pdf
+-Why p_b=p_B? What is each?
+
+Lecture5.pdf
+-Capacity formula

@@ -1,0 +1,98 @@
+﻿Environment of a compiler:
+
+     Modular source program
+    /
+Preprocessor
+    \
+     combined source program
+    /
+Compiler
+    \
+    assembly code
+    /
+Assembler
+    \
+    relocatable machine code
+    /
+Loader/linker
+    \
+    absolute machine code
+    
+-Lexical Analysis
+-Syntax analysis
+-Semantic analysis
+-Int. code generation  --ANALYSIS UPTO HERE INCLUDING
+-Int. code optimization
+-Code generation
+-Code optimization     --SYNTHESIS UPTO HERE INCLUDING
+
+Lexical: Find token in source program
+Syntax Analyis: Useful components such as expressions in source program - Syntax tree
+Semantic Analysis: Meaning of source program. Some extra checks that cannot be specified by context free grammars. Semantic analysis performs remaining checking and analysis(type checking)
+Intermediate code gen: A tree that represents code for some idealized abstract machine(internal).
+    Maybe interpreted or translated to real machine code
+    
+Abstract machine emulators like JVM exist to avoid generating code for a specific machine. JVM executes intermediate code
+
+
+Java only looks for if-then-else in first branch of an if-then-else. if you write only an if then else is considered to be an else to the inner if
+
+
+Interference graphs:
+Interference edges join temporaries that cannot be allocated to the same register:
+a)they live simultaneously
+b)one is assigned to(but not live) while the other is live
+c)machine specific: some register not available for instruction
+
+Coalescing node:
+To eliminate redundant copying:
+-if there is a stm a=b such that there is no interference edge between a and b, coalesce a and b into one.
+-New node has neighbours the old node's neighbours.
+-Coalesce only if the modified graph is still colourable:
+---Coalesce a and b if new node a/b would have <k neighbours of degree >=k
+
+
+Quadruple is a type of intermediate representation
+Quadruple = operator + destination + source + source
+
+
+Dead code elimination:
+s = b op c. if s is not in out after that statement->statement can be deleted
+
+Reaching definitions:
+-Which definitions reach a statement. How can I replace the definition in the statement
+-Useful for:
+---Constant propagation (replace t in u with constant)
+    -Definition d reaches u
+    -No other definitions of t reach u
+---Copy propagation (replace t in u with variable z)
+    -Definition d reaches u (t has z in it)
+    -No other definitions of t reach u (t has not been changed to anything)
+    -No definition of z on path from d to u (z has not been changed)
+
+Available Expressions:
+-Which expression are available at a statement. Can I replace instead of recalculating?
+-Useful for:
+---Common subexpression elimination(a-there is such a definition d on every path to u
+                                   (b-no definiftions of x or y between(each) d and u)
+                                   
+Loop Hoisting:
+-Loop invariant d: t=a1 op a2 can be moved before the loop only if:
+--t is not live on entry to the loop
+--and d is the only definition of t in the loop
+--and d "dominates" all loop exits at which t is live
+
+
+Strength reduction:
+-Replace derived induction variables with basic induction variables
+
+Useless Variables:
+-A variable v is useless in a loop if it is used only in definitions of v and is dead at all loop exits
+
+Loop unrolling:
+-Using knowledge of induction variables:
+--Have one even part(2 iterations)
+--Have one odd part(1 iteration)
+--if there is more than 2 left, run the first
+--Otherwise the second.
+

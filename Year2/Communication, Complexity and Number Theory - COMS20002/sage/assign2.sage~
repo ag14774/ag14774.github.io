@@ -1,0 +1,66 @@
+def addToItself(P, n):
+    y = P
+    for i in range(n):
+        y = y + P
+    return y
+
+def perm2cycles(perm):
+    n = perm.ncols()
+    check = range(1,n+1,1)
+    nextUnused = [0]
+    def UpdateNext(i):
+        next = i
+        while True:
+            next = next + 1
+            if next == n:
+                nextUnused[0] = n
+                return
+            if check[next] != 0:
+                nextUnused[0] = next
+                return
+    def findCycle(start):
+        def findCycleHelper(start2,end):
+            check[start2] = 0
+            item = perm[1][start2]
+            #print str(item) +" " + str(end)
+            if(item == end):
+                return [item]
+            return [item] + findCycleHelper(item, end)
+        cycle = findCycleHelper(start,start)
+        UpdateNext(start)
+        return cycle
+    cycles = []
+    while(True):
+        #print str(nextUnused[0])
+        cycle = findCycle(nextUnused[0])
+        if(len(cycle)>1):
+            cycles.append(cycle)
+        if nextUnused[0] == n:
+            return cycles
+
+def solveaxb(a,b,c):
+    ZP = Integers(c)
+    b = ZP(b)
+    a = ZP(a)
+    if b == 1:
+        return 0
+    res = 1
+    acc = a
+    while True:
+        if acc==b:
+            return res
+        res = res + 1
+        acc = ZP(acc*a)
+
+def solveaxb(a,b,E):
+    b = E(b)
+    a = E(a)
+    if b == E(0):
+        return 0
+    res = 1
+    acc = a
+    while True:
+        if acc==b:
+            return res
+        res = res + 1
+        acc = E(acc+a)

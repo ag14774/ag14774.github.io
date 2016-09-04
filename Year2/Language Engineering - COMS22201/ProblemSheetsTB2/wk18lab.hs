@@ -1,0 +1,12 @@
+--S[[if (x<=0) then x:=x*(0-1) else skip]] = 
+-- /s -> cond(B[[x<=0]] s,S[[x:=x*(0-1)]] s, S[[skip]] s)
+-- /s -> cond(B[[x<=0]] s,s[x|->A[[x*(0-1)]] s], s)
+-- /s -> cond(A[[x]] s<=0, s[x|->A[[x]]s * (-1)], s)
+-- /s -> cond(s x <= 0, s[x|->s x * (-1)],s)
+--
+-- Question 3??
+--
+-- Question 4
+-- (x^2+1)/2=x, x^2+1=2x x^2-2x+1=0 x=1
+--
+--

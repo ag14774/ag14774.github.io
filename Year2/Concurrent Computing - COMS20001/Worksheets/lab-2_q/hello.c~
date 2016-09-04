@@ -1,0 +1,15 @@
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main(void) {
+    char buf[128] = "Hello World\n";
+    int stdout_copy = dup(1);
+
+    if(stdout_copy < 0) {
+        return -1;
+    }
+
+    write(stdout_copy, buf, strlen(buf));
+    return 0;
+}

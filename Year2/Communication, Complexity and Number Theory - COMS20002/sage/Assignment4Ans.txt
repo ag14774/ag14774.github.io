@@ -1,0 +1,298 @@
+﻿Question 1
+def invert(n,m):
+    (g,a,b) = MyXGCD(n,m)
+    if g!=1:
+        raise Exception("Not invertible!")
+    return Integers(m)(a)
+
+def MyXGCD(a,b):
+    rprev = a; r = b
+    sprev = 1; s = 0
+    tprev = 0; t = 1
+    while True:
+        q = rprev // r
+        rnext = rprev - q*r #Remainder calculations
+        rprev = r
+        r = rnext
+        snext = sprev - q*s #First Bezout coefficient
+        sprev = s
+        s = snext
+        tnext = tprev - q*t #Second Bezout coefficient
+        tprev = t
+        t = tnext
+        if r==0: return (rprev,sprev,tprev)
+---------------------------------------------------------------
+Question 2:
+Code used to generate:
+def findAllQ2():
+    var('X')
+    g7 = FiniteField(7)[X]
+    res = []
+    for i in range(7):
+        for j in range(7):
+            p = g7((j,i,1))
+            if p.is_irreducible():
+                print p
+
+X^2 + 1
+X^2 + 2
+X^2 + 4
+X^2 + X + 3
+X^2 + X + 4
+X^2 + X + 6
+X^2 + 2*X + 2
+X^2 + 2*X + 3
+X^2 + 2*X + 5
+X^2 + 3*X + 1
+X^2 + 3*X + 5
+X^2 + 3*X + 6
+X^2 + 4*X + 1
+X^2 + 4*X + 5
+X^2 + 4*X + 6
+X^2 + 5*X + 2
+X^2 + 5*X + 3
+X^2 + 5*X + 5
+X^2 + 6*X + 3
+X^2 + 6*X + 4
+X^2 + 6*X + 6
+------------------------------------------------------------------
+Question 3:
+var('X')
+G7 = FiniteField(7)[X]
+p = G7(X^3 + 4*X^2 + X + 3)
+p.is_irreducible()
+print p
+
+X^3 + 4*X^2 + X + 3
+-------------------------------------------------------------------
+Question 4:
+F=GF(2)
+R.<x> = F[x]
+QR.<x> = R.quotient(x^3+1)
+list = [x^2, x, x^2 + x, 1, x^2 + 1, x + 1, x^2 + x + 1]
+units = []
+for p in list:
+    if p.is_unit():
+        units = units + [p]
+for p in units:
+    list.remove(p)
+zerodiv = []
+for p in list:
+    for k in list:
+        if p*k == 0 and not(k in zerodiv):
+            zerodiv = zerodiv + [k]
+for p in zerodiv:
+    list.remove(p)
+
+
+#Zeros:
+print 0
+> 0
+#Units:
+print units
+> [x^2, x, 1]
+#Zero divisors:
+print zerodiv:
+> [x^2 + x + 1, x^2 + x, x^2 + 1, x + 1]
+#Neither:
+print list:
+> []
+----------------------------------------------------------------------
+Question 5.1:
+Code used to generate automorphisms:
+def findAutomorphisms(p,n,q):                                                    
+    F.<x>=FiniteField(p^n,'x',modulus=q)                                         
+    AUT = []                                                                     
+    for k in range(n):                                                           
+       f = x^p^k                                                                 
+       AUT = AUT + [f]                                                           
+    return AUT 
+
+Automorphisms of A:
+f(X) = X         f(a,b) = (a,b)
+f(X) = 4*X + 3   f(a,b) = (a+3b,4b)
+
+Automorphisms of B:
+f(Y) = Y         f(a,b) = (a,b)
+f(Y) = 4*Y + 4   f(a,b) = (a+4b,4b)
+------------------------------------------------------------------------
+Question 5.2:
+Code used to generate isomorphisms:
+F=GF(5)
+R.<x>=F[x]
+U.<y>=GF(5^2,modulus=x^2+x+2)
+S.<x>=U[x]
+S(x^2+2*x+4).factor()
+(x + y + 4) * (x + 4*y + 3)
+
+f(X) = - Y - 4  = 4Y + 1    f(a,b) = (a+b,4b)
+f(X) = -4*Y - 3 = Y + 2     f(a,b) = (a+2b,b)
+-------------------------------------------------------------------------
+Question 6.1:
+F.<x> = GF(2^8,modulus=x^8+x^6+x^5+x^4+1)
+F((x^6+x^5+x^4)*(x^7+x^5+x^2)+(x^6+x^4+x^3))
+x^7 + x^6 + x^5 + x^2
+-------------------------------------------------------------------------
+Question 6.2:
+F.<x> = GF(2^8,modulus=x^8+x^6+x^5+x^4+1)
+p=F(x^5+1)
+p = p^-1
+p*(x^3+x^2+x)
+x^7 + x^6 + x^5 + x^4 + x^2
+-------------------------------------------------------------------------
+Question 6.3:
+F.<x> = GF(2^8,modulus=x^8+x^7+x^6+x+1)
+for i in range(8):
+    x^2^i
+
+Z
+Z^2
+Z^4
+Z^7 + Z^6 + Z + 1
+Z^4 + Z^3 + Z^2 + Z + 1
+Z^7 + Z^4 + Z^2 + Z
+Z^7 + Z^5
+Z^7 + Z^6 + Z^5 + Z^4 + Z^3 + Z^2 + 1
+-------------------------------------------------------------------------
+Question 6.4:
+var("z")
+F = GF(2)
+R.<z> = F[z]
+U.<x> = GF(2^8,modulus=x^8+x^6+x^5+x^4+1)
+S.<z> = U[z]
+S(z^8+z^7+z^6+z+1).factor()
+(z + x^3 + x + 1) * (z + x^5 + x^2 + x + 1) * (z + x^6 + x^2 + 1) * (z + x^6 + x^5 + x^3 + x^2 + 1) * (z + x^7 + x^4 + x^3 + x + 1) * (z + x^7 + x^5) * (z + x^7 + x^6 + x^4 + x) * (z + x^7 + x^6 + x^5 + x^3 + x^2)
+
+f(Z) = X^3 + X + 1 
+-------------------------------------------------------------------------
+Question 7.1:
+F1.<x> = GF(3^3,modulus=x^3+x^2+2*x+1)
+x^3
+2*x^2 + x + 2
+x^4
+2*x^2 + x + 1
+
+F2.<y> = GF(3^3,modulus=x^3+x^2+x+2)
+y^3
+2*y^2 + 2*y + 1
+y^4
+2*y + 2
+
+X^3 = 2X^2 + X + 2 (mod p(X))
+X^4 = 2X^2 + X + 1 (mod p(X))
+Y^3 = 2Y^2 + 2Y + 1 (mod q(Y))
+Y^4 = 2Y + 2 (mod q(Y))
+-----------------------------------------------------------------------------
+Question 7.2:
+3 automorphisms. Frobenius map is a generator(X^2^0, X^2^1, X^2^2).
+X^2^3 will give back X because X^(2^3-1) is X to the power of the order
+of the multiplicative group and hence is equal to 1. The elements are called cosets
+-----------------------------------------------------------------------------
+Question 7.3:
+Code used:
+def solveQ73(q,i):
+    var("a")
+    var("b")
+    var("c")
+    F.<x> = GF(3^3,modulus=q)
+    frob = x^3^i
+    p = a + b*frob + c*frob^2
+    p = p.full_simplify()
+    #Upto here is enough if you want the answer in the form u+vX+wX^2
+    coeffA = p.leading_coefficient(a).list()
+    coeffB = p.leading_coefficient(b).list()
+    coeffC = p.leading_coefficient(c).list()
+    for k in range(3):
+        if k>=len(coeffA):
+            coeffA.append(0)
+        if k>=len(coeffB):
+            coeffB.append(0)
+        if k>=len(coeffC):
+            coeffC.append(0)
+    VARS = ["u = ","v = ","w = "]
+    for k in range(3):
+        print VARS[k] + str(coeffA[k])+"a + "+str(coeffB[k])+"b + "+str(coeffC[k])+"c"
+
+#For p(X) = X^3 + X^2 + 2X + 1
+solveQ73(x^3+x^2+2*x+1,1)
+u = 1a + 2b + 1c
+v = 0a + 1b + 0c
+w = 0a + 2b + 1c
+#For q(Y) = Y^3 + Y^2 + Y + 2
+solveQ73(x^3+x^2+x+2,1)
+u = 1a + 1b + 2c
+v = 0a + 2b + 1c
+w = 0a + 2b + 0c
+-------------------------------------------------------------------------------
+Question 7.4:
+#For p(X) = X^3 + X^2 + 2X + 1
+#For f(X) = X^3^0
+solveQ73(x^3+x^2+2*x+1,0)
+u = 1a + 0b + 0c
+v = 0a + 1b + 0c
+w = 0a + 0b + 1c
+#For f(X) = X^3^2
+solveQ73(x^3+x^2+2*x+1,2)
+u = 1a + 0b + 2c
+v = 0a + 1b + 0c
+w = 0a + 1b + 1c
+
+#For q(Y) = Y^3 + Y^2 + Y + 2
+#For f(Y) = Y^3^0
+solveQ73(x^3+x^2+x+2,0)
+u = 1a + 0b + 0c
+v = 0a + 1b + 0c
+w = 0a + 0b + 1c
+#For f(Y) = Y^3^2
+solveQ73(x^3+x^2+x+2,2)
+u = 1a + 1b + 0c
+v = 0a + 0b + 2c
+w = 0a + 1b + 2c
+----------------------------------------------------------------------------------
+Question 7.5:
+F = GF(3)
+R.<x> = F[x]
+U.<y> = GF(3^3,modulus=x^3+x^2+x+2)
+S.<x> = U[x]
+S(x^3+x^2+2*x+1).factor()
+(x + 2*y + 2) * (x + y^2 + y + 1) * (x + 2*y^2 + 1)
+
+f(X) = -2Y - 2 = Y + 1                f(a+bX+cX^2)= (a+b+c, b+2c, c)
+f(X) = -Y^2 - Y - 1 = 2Y^2 + 2Y + 2   f(a+bX+cX^2)= (a+2b+2c, 2b+2c, 2b+c)
+f(X) = -2Y^2 - 1 = Y^2 + 2            f(a+bX+cX^2)= (a+2b,2c,b+c)
+-----------------------------------------------------------------------------------
+Question 7.6:
+#For p(X)
+F.<x> = GF(3^3,modulus=x^3+x^2+2*x+1)
+var("a, b, c, d, e, f")
+p=(a+b*x+c*x^2)*(d+e*x+f*x^2)
+p = p.expand().full_simplify()
+p
+(c*d + (b + 2*c)*e + (a + 2*b + 2*c)*f)*x^2 + a*d + 2*c*e + (2*b + c)*f + (b*d + (a + c)*e + (b + c)*f)*x
+w=(c*d + (b + 2*c)*e + (a + 2*b + 2*c)*f)
+v=(b*d + (a + c)*e + (b + c)*f)
+u=a*d + 2*c*e + (2*b + c)*f
+u=u.expand()
+v=v.expand()
+w=w.expand()
+#u = a*d + 2*c*e + 2*b*f + c*f
+#v = b*d + a*e + c*e + b*f + c*f
+#w = c*d + b*e + 2*c*e + a*f + 2*b*f + 2*c*f
+
+#For q(Y)
+F.<x> = GF(3^3,modulus=x^3+x^2+x+2)
+var("a, b, c, d, e, f")
+p=(a+b*x+c*x^2)*(d+e*x+f*x^2)
+p = p.expand().full_simplify()
+p
+(c*d + (b + 2*c)*e + (a + 2*b)*f)*x^2 + a*d + c*e + (b + 2*c)*f + (b*d + (a + 2*c)*e + 2*(b + c)*f)*x
+w=(c*d + (b + 2*c)*e + (a + 2*b)*f)
+v=(b*d + (a + 2*c)*e + 2*(b + c)*f)
+u=a*d + c*e + (b + 2*c)*f
+u=u.expand()
+v=v.expand()
+w=w.expand()
+#u = a*d + c*e + b*f + 2*c*f
+#v = b*d + a*e + 2*c*e + 2*b*f + 2*c*f
+#w = c*d + b*e + 2*c*e + a*f + 2*b*f
+

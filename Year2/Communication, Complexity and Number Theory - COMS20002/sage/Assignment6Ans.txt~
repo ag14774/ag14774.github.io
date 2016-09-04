@@ -1,0 +1,292 @@
+Question 1.1:
+MS = MatrixSpace(GF(2),6,21)
+S = MS([1,0,1,0,1,0,1,0,1,1,1,0,1,1,0,1,0,0,1,0,1,0,1,0,0,0,0,1,1,1,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,1,0,1,1,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,1,0,0,1,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,0,1,1, 1,0,1,0,1,0,0,0,0,0,0,0,1,0,1,1,0,1,1,0,0,0,1,0,1,1])
+S = S.echelon_form()
+S
+[1 0 1 0 1 0 0 0 1 1 1 1 0 1 1 0 1 0 0 0 0]
+[0 1 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 1 1 0]
+[0 0 0 1 0 0 0 0 0 0 1 1 0 1 1 0 1 0 0 1 0]
+[0 0 0 0 0 1 0 0 1 0 1 0 0 1 0 1 0 1 1 1 1]
+[0 0 0 0 0 0 1 0 0 0 0 1 1 0 1 1 1 0 1 0 1]
+[0 0 0 0 0 0 0 1 0 1 1 0 1 1 0 0 0 1 0 1 1]
+------------------------------------------------------------------
+Question 1.2:
+S is the generator from the previous question
+H = S.right_kernel().basis_matrix() #parity check matrix
+v=vector(GF(2),[1,1,0,0,0,1,0,0,0,0,0,1,1,1,0,0,0,1,1,0,0])
+H*v
+(0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0)
+
+v is not in C. H*v is not 0.
+------------------------------------------------------------------
+Question 2.1:
+G=Matrix(GF(5), 9, [0,0,0,0,0,0,0,0,1,1,2,1,2,3,1,4,4,1,0,0,0,0,0,0,0,0,3,1,4,4,3,2,3,0,0,1,0,0,0,0,0,0,0,1,4,0,2,1,4,3,2,0,0,0,0,0,0,0,1,0,1,3,4,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,3,3,2,1,3,3,2,0,0,0,0,0,1,0,0,0,3,1,1,3,2,2,0,2,0,0,0,0,0,0,0,0,0,4,0,3,3,1,1,2,3,0,0,0,1,0,0,0,0,0,1,4,2,0,4,1,3,3,0,0,0,0,1,0,0,0,0,3,1,2,1,3,4,1,4])
+c=vector(GF(5),[3, 3, 4, 3, 4, 2, 0, 3, 2, 3, 3, 4, 3, 0, 0, 1, 1])
+G.right_kernel().basis_matrix()*c
+(0, 0, 0, 0, 0, 0, 0, 0)
+
+Code is correct (phewww, I wrote it down one bit at a time!)
+------------------------------------------------------------------
+Question 2.2:
+5^9 = 1953125
+------------------------------------------------------------------
+Question 2.3:
+H=G.right_kernel().basis_matrix()
+H
+[1 0 0 0 0 0 0 0 1 2 4 1 2 3 2 3 4]
+[0 1 0 0 0 0 0 0 2 2 1 2 2 2 2 4 1]
+[0 0 1 0 0 0 0 0 3 4 3 0 2 4 4 4 4]
+[0 0 0 1 0 0 0 0 3 4 2 0 0 1 4 0 3]
+[0 0 0 0 1 0 0 0 1 0 1 0 2 3 4 3 2]
+[0 0 0 0 0 1 0 0 1 0 3 1 2 0 0 0 2]
+[0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0]
+[0 0 0 0 0 0 0 1 0 4 0 0 0 0 1 2 3]
+
+It is clear that the rank of this matrix is 8. This means that there exists a subset of 9 columns
+which are linearly dependent. That implies that d<=9(actually d=9).
+------------------------------------------------------------------
+Question 3.1:
+H=matrix(GF(2),5,[1,0,0,0,0,1,0,1,1,0,1,
+0,1,0,0,0,0,1,0,1,0,0,
+0,0,1,0,0,0,0,1,0,0,0,
+0,0,0,1,0,1,0,1,0,1,1,
+0,0,0,0,1,0,0,0,0,1,1])
+Hrk = H.right_kernel()
+G1 = Hrk.basis_matrix()
+[1 0 0 0 0 0 0 0 0 1 1]
+[0 1 0 0 0 0 0 0 1 1 1]
+[0 0 1 0 0 1 0 1 0 0 0]
+[0 0 0 1 0 1 0 0 0 1 1]
+[0 0 0 0 1 1 0 0 0 0 1]
+[0 0 0 0 0 0 1 0 1 1 1]
+G2 = copy(G1)
+G2.swap_columns(3,4)
+G2
+[1 0 0 0 0 0 0 0 0 1 1]
+[0 1 0 0 0 0 0 0 1 1 1]
+[0 0 1 0 0 1 0 1 0 0 0]
+[0 0 0 0 1 1 0 0 0 1 1]
+[0 0 0 1 0 1 0 0 0 0 1]
+[0 0 0 0 0 0 1 0 1 1 1]
+-------------------------------------------------------------------
+Question 3.2:
+0 :1
+1 :0
+2 :1
+3 :7
+4 :9
+5 :13
+6 :15
+7 :9
+8 :6
+9 :3
+10:0
+11:0
+---------------------------------------------------------------------
+Question 3.3:
+def SystematicEncoding(G2,m):
+    G = copy(G2);
+    G = copy(G.rref());
+    pivots = G.pivots();
+    i = 0;
+    while True:
+        G.swap_columns(i,pivots[i])
+        pivots = G.pivots();
+        i = i + 1
+        if i == len(pivots):
+            break
+    return m*G
+----------------------------------------------------------------------
+Question 3.4:
+H=matrix(GF(2),5,[1,0,0,0,0,1,0,1,1,0,1,
+0,1,0,0,0,0,1,0,1,0,0,
+0,0,1,0,0,0,0,1,0,0,0,
+0,0,0,1,0,1,0,1,0,1,1,
+0,0,0,0,1,0,0,0,0,1,1])
+Hrk = H.right_kernel()
+G1 = Hrk.basis_matrix()
+h = vector(GF(2),[0,1,1,1,0,0])
+e = vector(GF(2),[1,1,0,1,0,0])
+l = vector(GF(2),[1,0,1,0,0,1])
+o = vector(GF(2),[0,0,1,0,1,1])
+hc = SystematicEncoding(G1,h)
+ec = SystematicEncoding(G1,e)
+lc = SystematicEncoding(G1,l)
+oc = SystematicEncoding(G1,o)
+enc = []
+enc.append(hc)
+enc.append(ec)
+enc.append(lc)
+enc.append(lc)
+enc.append(oc)
+enc
+[(0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0),
+ (1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1),
+ (1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0),
+ (1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0),
+ (0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0)]
+------------------------------------------------------------------------
+Question 4.1:
+def DecodeLinear(G, r):
+    def minHamming(vecList):
+        minH = 999999
+        minV = vector(GF(2),[])
+        for v in vecList:
+            if v.hamming_weight() < minH:
+                minH = v.hamming_weight()
+                minV = v
+        return minV
+    L = G.image().list()
+    coset = [i + r for i in L]
+    leader = minHamming(coset)
+    return r - leader
+--------------------------------------------------------------------------
+Question 4.2:
+r = vector(GF(2),[0,0,1,1,1,1,0,1,0,1,0])
+r1 = vector(GF(2),[0,1,1,0,1,1,1,1,0,0,0])
+r2 = vector(GF(2),[1,0,0,1,0,1,1,0,1,0,0])
+H=matrix(GF(2),5,[1,0,0,0,0,1,0,1,1,0,1,
+0,1,0,0,0,0,1,0,1,0,0,
+0,0,1,0,0,0,0,1,0,0,0,
+0,0,0,1,0,1,0,1,0,1,1,
+0,0,0,0,1,0,0,0,0,1,1])
+G = H.right_kernel().basis_matrix()
+DecodeLinear(G,r)
+(0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0)
+DecodeLinear(G,r1)
+(0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0)
+DecodeLinear(G,r2)
+(0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0)
+--------------------------------------------------------------------------
+Question 5.1:
+def parityCheck(r):
+    L = []
+    for i in range(1,2^r,1):
+        l = Integer(i).digits(base=2,padto=r)
+        l.reverse()
+        L.append(l)
+    return matrix(GF(2),L).transpose()
+---------------------------------------------------------------------------
+Question 5.2:
+def DecHamming(r, m):
+    v = copy(m)
+    H = parityCheck(r)
+    e = v * H.transpose()
+    e = e.list()
+    e.reverse()
+    pos_of_error = ZZ(e,base=2) - 1
+    if pos_of_error >= 0:
+        v[pos_of_error] = 1 - v[pos_of_error]
+    #EVERYTHING BELOW THIS LINE CAN BE REMOVED
+    #IF WE ONLY NEED TO CORRECT THE CODEWORD
+    #Assume that parity bits are located in all
+    #positions that are powers of 2
+    k = 2^r-1 - r;
+    V=VectorSpace(GF(2),2^r-1)
+    zero = VectorSpace(GF(2),k).zero().list()
+    parities = copy(V.zero())
+    for i in range(r):
+        parities[2^i-1] = 1
+    dataList = []
+    iden = identity_matrix(k)
+    j=0
+    for i in range(0,2^r-1):
+        if parities[i] == 1:
+            dataList.append(zero)
+        else:
+            dataList.append(iden.row(j).list())
+            j = j + 1
+    dataMat = matrix(GF(2),dataList).transpose()
+    print "Corrected codeword: "
+    print v
+    print "Extracted data: "
+    return dataMat * v
+-----------------------------------------------------------------------------
+Question 5.3:
+v = vector(GF(2),[1,1,1,0,0,0,1,0,0,1,0,0,1,1,1])
+DecHamming(4, v)
+Corrected codeword: 
+(0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1)
+Extracted data: 
+(1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1)
+------------------------------------------------------------------------------
+Question 6:
+def solveQ6():
+    H = parityCheck(4)
+    print H
+    iden = identity_matrix(15)
+    for i in range(15):
+        print str(iden[i])+" : "+ str(iden[i]*H.transpose())
+
+solveQ6()
+[0 0 0 0 0 0 0 1 1 1 1 1 1 1 1]
+[0 0 0 1 1 1 1 0 0 0 0 1 1 1 1]
+[0 1 1 0 0 1 1 0 0 1 1 0 0 1 1]
+[1 0 1 0 1 0 1 0 1 0 1 0 1 0 1]
+
+(1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) : (0, 0, 0, 1)
+(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) : (0, 0, 1, 0)
+(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) : (0, 0, 1, 1)
+(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) : (0, 1, 0, 0)
+(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0) : (0, 1, 0, 1)
+(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0) : (0, 1, 1, 0)
+(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0) : (0, 1, 1, 1)
+(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0) : (1, 0, 0, 0)
+(0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0) : (1, 0, 0, 1)
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0) : (1, 0, 1, 0)
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0) : (1, 0, 1, 1)
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0) : (1, 1, 0, 0)
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0) : (1, 1, 0, 1)
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0) : (1, 1, 1, 0)
+(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1) : (1, 1, 1, 1)
+---------------------------------------------------------------------------------
+Question 7.1:
+def GenerateReedMatrix(Field, n, k, points):
+    if len(points) != n:
+        raise Exception("You need exactly "+str(n)+" points")
+    if Field.modulus().degree() != k-1:
+        raise Exception("Your field is not of the form GF(p^"+str(k-1)+")")
+    genlist = []
+    for i in range(k):
+        row = []
+        row = [Field(a^i) for a in points]
+        genlist.append(row)
+    genmat = matrix(Field,genlist)
+    return genmat
+
+F.<x> = GF(3^3,modulus=x^3+2*x+1)
+pointlist = [0,x,x^2,x+2,x^2+2*x,2*x^2+x+2,x^2+x+1,x^2+2*x+2,2*x^2+2,x+1,x^2+x]
+G=GenerateReedMatrix(F,11,4,pointlist)
+G
+[              1               1               1               1               1               1               1               1               1               1               1]
+[              0               x             x^2           x + 2       x^2 + 2*x   2*x^2 + x + 2     x^2 + x + 1   x^2 + 2*x + 2       2*x^2 + 2           x + 1         x^2 + x]
+[              0             x^2       x^2 + 2*x     x^2 + x + 1       2*x^2 + 2         x^2 + x         x^2 + 2             2*x         2*x + 1   x^2 + 2*x + 1   2*x^2 + x + 1]
+[              0           x + 2     x^2 + x + 1           x + 1         x^2 + 2           2*x^2   x^2 + 2*x + 1         x^2 + 1 2*x^2 + 2*x + 1               x       x^2 + 2*x]
+G.right_kernel().basis_matrix()
+[              1               0               0               0               0               0               0         x^2 + 1     x^2 + x + 2         2*x + 2             x^2]
+[              0               1               0               0               0               0               0           2*x^2 2*x^2 + 2*x + 1           x + 2       2*x^2 + 2]
+[              0               0               1               0               0               0               0               x             x^2     x^2 + x + 1     x^2 + x + 1]
+[              0               0               0               1               0               0               0       2*x^2 + 1           x + 2       2*x^2 + 1 2*x^2 + 2*x + 1]
+[              0               0               0               0               1               0               0       2*x^2 + x         x^2 + x           x + 1               1]
+[              0               0               0               0               0               1               0 2*x^2 + 2*x + 2               2               x         x^2 + 1]
+[              0               0               0               0               0               0               1             2*x         2*x + 2     x^2 + x + 2   2*x^2 + x + 1]
+
+(Imagine there are a's instead of x's!)
+----------------------------------------------------------------------------------
+Question 7.2:
+d = n - k + 1 = 11 - 4 + 1 = 8
+----------------------------------------------------------------------------------
+Question 7.3:
+F.<x> = GF(3^3,modulus=x^3+2*x+1)
+pointlist = [0,x,x^2,x+2,x^2+2*x,2*x^2+x+2,x^2+x+1,x^2+2*x+2,2*x^2+2,x+1,x^2+x]
+G=GenerateReedMatrix(F,11,4,pointlist)
+v=vector(F,[2*x,x^2+2*x+1,2*x,2*x^2+2*x+2,x^2+x+1,x+1,2*x^2+2*x,x^2+1,2*x^2+1,2,x^2+2])
+c=DecodeLinear(G,v)
+v
+(2*x, x^2 + 2*x + 1, 2*x, 2*x^2 + 2*x + 2, x^2 + x + 1, x + 1, 2*x^2 + 2*x, x^2 + 1, 2*x^2 + 1, 2, x^2 + 2)
+c
+(2*x, x^2 + x + 1, 2*x, 2*x^2 + 2*x + 2, x^2 + x + 1, x + 1, 2*x^2 + 2*x, 2, 2*x^2 + 1, 2, x^2 + 2)
+c-v
+(0, 2*x, 0, 0, 0, 0, 0, 2*x^2 + 1, 0, 0, 0)
+
+Two errors occurred
